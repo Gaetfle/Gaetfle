@@ -1,7 +1,8 @@
 /* google fonts */
 
-@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
 /* reset default style */
 
@@ -15,16 +16,19 @@
 
 body {
   background: #FCF9F3;
-  font-family: "Istok Web", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
+h5{
+  font-family: "Source Serif Pro", serif !important;
+}
+
 h6 {
-  font-family: "RocknRoll One", sans-serif !important;
+  font-family: "Open Sans", serif !important;
 }
 
 a {

@@ -1,14 +1,12 @@
 import React from "react";
-
 import "../../../styles/product-card.css";
-
 import { Link } from "react-router-dom";
-
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
+import Rating from '@mui/material/Rating';
 
 const ProductCard = (props) => {
-  const { id, title, image01, price } = props.item;
+  const { id, title, image01, price, rating } = props.item;
   const dispatch = useDispatch();
 
   const addToCart = () => {
@@ -18,6 +16,7 @@ const ProductCard = (props) => {
         title,
         image01,
         price,
+        rating
       })
     );
   };

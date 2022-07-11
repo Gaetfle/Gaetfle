@@ -38,6 +38,8 @@
 .cart__item {
   margin-bottom: 15px;
   border-bottom: 1px solid #FCF9F3;
+  margin: 0px 10px 0px 10px;
+  box-shadow: 4px 4px #B7B4B4;
 }
 
 @media only screen and (max-width: 576px) {

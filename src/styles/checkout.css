@@ -1,11 +1,96 @@
 .checkout__bill {
-  background: #FCF9F3;
+  background: #626546;
   padding: 30px;
+  border-radius: 20px;
+}
+
+.checkout__bill h6{
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.checkout__bill .detail__infor{
+  margin-bottom: 20px;
+}
+
+.checkout__bill .detail__infor h4{
+  display: inline-block;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.checkout__bill .detail__infor span{
+  color: #999B84;
+  font-size: 26px;
+  padding-right: 10px;
+  margin-left: -3px;
+}
+
+.checkout__total h5{
+  color: #fff;
+  font-size: 20px;
+}
+
+.product__list{
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.product__list h6{
+  color: #626546;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .checkout__total {
   border-top: 1px solid #ddd;
   padding-top: 30px;
+}
+
+.narrow__back span{
+  color:#626546;
+  font-size: 30px;
+  margin-top: -55px;
+  margin-bottom: 80px;
+}
+
+.narrow__back span:hover{
+  transform: translateX(10px);
+}
+
+.narrow__back a:hover{
+  color:#999B84;
+}
+
+.order__button button{
+  background: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  color: #626546;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.voucher__area{
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  height: 40px;
+}
+
+.totalQuantity{
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 660px;
+  padding-top: 10px;
 }
 
 @media only screen and (max-width: 768px) {

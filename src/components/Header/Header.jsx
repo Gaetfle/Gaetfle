@@ -4,7 +4,7 @@ import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
+import {GrCart} from "react-icons/gr";
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 
 import "../../styles/header.css";
@@ -108,12 +108,12 @@ const Header = () => {
               </Link>
             </span>
             <span className="cart__icon" onClick={toggleCart}>
-              <i class="ri-shopping-basket-line"></i>
+              <GrCart/>
               <span className="cart__badge">{totalQuantity}</span>
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>
-              <i class="ri-menu-line"></i>
+              <i className="ri-menu-line"></i>
             </span>
           </div>
         </div>
