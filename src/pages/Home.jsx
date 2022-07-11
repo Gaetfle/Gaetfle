@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col } from "reactstrap";
-import homeBanner from "../assets/images/bannerHome.jpg";
 import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 // import Category from "../components/UI/category/Category.jsx";
@@ -45,10 +44,10 @@ const Home = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="6" md="6">
+            <Col lg="4" md="4">
               <div className="hero__content  ">
                 {/* <h5 className="mb-3">Easy way to make an order</h5> */}
-                <h1 className="mb-4 hero__title">
+                <h1 className="mb-3 hero__title">
                   <span>CHERISH</span><br />sweet momments
                 </h1>
 
@@ -69,10 +68,8 @@ const Home = () => {
               </div>
             </Col>
 
-            <Col lg="6" md="6">
-              <div className="hero__img">
-                <img src={homeBanner} alt="bannerHome-img"/>
-              </div>
+            <Col lg="8" md="8">
+              <TestimonialSlider />
             </Col>
           </Row>
         </Container>
@@ -179,7 +176,7 @@ const Home = () => {
                   quis provident placeat fugiat!
                 </p>
 
-                <TestimonialSlider />
+                
               </div>
             </Col>
 

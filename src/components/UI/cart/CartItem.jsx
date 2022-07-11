@@ -33,7 +33,10 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <ListGroupItem className="border-0 cart__item">
+    <ListGroupItem className="border-0 cart__item" style={{
+      borderRadius: "20px",
+      marginBottom: "15px"
+    }}>
       <div className="cart__item-info d-flex gap-2">
         <img src={image01} alt="product-img" />
 
@@ -41,17 +44,19 @@ const CartItem = ({ item }) => {
           <div>
             <h6 className="cart__product-title">{title}</h6>
             <p className=" d-flex align-items-center gap-5 cart__product-price">
-              {quantity}x <span>${totalPrice}</span>
-            </p>
-            <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
-              <span className="increase__btn" onClick={incrementItem}>
+              <span>{price} VNĐ</span> 
+              <div className=" d-flex align-items-center justify-content-between increase__decrease-btn" style={{width: "70px", marginLeft: "-15px", marginRight: "-15px"}}>
+                <span className="increase__btn" onClick={incrementItem}>
                 <MdAdd/>
-              </span>
-              <span className="quantity">{quantity}</span>
-              <span className="decrease__btn" onClick={decreaseItem}>
-                <GrFormSubtract/>
-              </span>
-            </div>
+                </span>
+                <span className="quantity">{quantity}</span>
+                <span className="decrease__btn" onClick={decreaseItem}>
+                  <GrFormSubtract/>
+                </span>
+              </div> 
+            <span>{totalPrice}VNĐ</span>
+            </p>
+            
           </div>
 
           <span className="delete__btn" onClick={deleteItem}>

@@ -1,20 +1,29 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {login} from '../store/auth/authSlice';
 
 const Login = () => {
-  const loginNameRef = useRef();
-  const loginPasswordRef = useRef();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(login(
+      {
+        email: email,
+        password: password,
+        isAuthenticated: true,
+      }
+    ));
   };
+  console.log(email, password);
 
   return (
     <Helmet title="Login">
-      {/* <CommonSection title="Login" /> */}
       <section>
         <Container>
           <Row>
@@ -23,17 +32,19 @@ const Login = () => {
                 <div className="form__group">
                   <input
                     type="email"
+                    value={email}
                     placeholder="Email"
                     required
-                    ref={loginNameRef}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="password"
+                    value={password}
                     placeholder="Password"
                     required
-                    ref={loginPasswordRef}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">

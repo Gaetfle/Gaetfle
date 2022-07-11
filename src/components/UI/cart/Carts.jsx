@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ListGroup } from "reactstrap";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
@@ -19,10 +18,13 @@ const Carts = () => {
   };
   return (
     <div className="cart__container">
-      <ListGroup className="cart">
-        <div className="cart__close">
+      <ListGroup className="cart" style={{borderRadius: "30px"}}>
+        <div className="cart__close d-flex">
           <span onClick={toggleCart}>
-            <i class="ri-close-fill"></i>
+            <i className="ri-close-fill"></i>
+          </span>
+          <span style={{marginLeft: "-400px"}}>
+            <h5>Cart</h5>
           </span>
         </div>
 
@@ -38,7 +40,7 @@ const Carts = () => {
 
         <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
-            Subtotal : <span>${totalAmount}</span>
+            Subtotal : <span>{totalAmount}VND</span>
           </h6>
           <button>
             <Link to="/checkout" onClick={toggleCart}>

@@ -1,10 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-
-import ava01 from "../../../assets/images/ava-1.jpg";
-import ava02 from "../../../assets/images/ava-2.jpg";
-import ava03 from "../../../assets/images/ava-3.jpg";
-
+import homeBanner from "../../../assets/images/bannerHome.jpg";
+import banner1 from "../../../assets/images/banner1.jpg";
+import banner2 from "../../../assets/images/banner2.jpg";
+import "../../../styles/hero-section.css";
 import "../../../styles/slider.css";
 
 const TestimonialSlider = () => {
@@ -20,18 +19,25 @@ const TestimonialSlider = () => {
   };
   return (
     <Slider {...settings}>
-      <div>
-        <p className="review__text">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          atque, quam minus totam maiores laborum! Impedit consectetur illum
-          aliquid odit. Odit dolore ipsum quod debitis nostrum necessitatibus
-          quis dolorem quas!"
-        </p>
+      <div className=" slider__content d-flex align-items-center gap-3 ">
+        <img src={homeBanner} alt="bannerHome-img"/>
+      </div>
+
+      <div className=" slider__content d-flex align-items-center gap-3 ">
+        <img src={banner1} alt="bannerHome-img2"/>
+      </div>
+
+      <div className=" slider__content d-flex align-items-center gap-3 ">
+        <img src={banner2} alt="bannerHome-img3"/>
+      </div>
+
+      {/* <div>
+        <img src={homeBanner} alt="bannerHome-img"/>
         <div className=" slider__content d-flex align-items-center gap-3 ">
           <img src={ava01} alt="avatar" className=" rounded" />
           <h6>Jhon Doe</h6>
         </div>
-      </div>
+      </div> 
       <div>
         <p className="review__text">
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
@@ -56,6 +62,7 @@ const TestimonialSlider = () => {
           <h6>Steven Crock</h6>
         </div>
       </div>
+      */}
     </Slider>
   );
 };

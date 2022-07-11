@@ -35,11 +35,6 @@
   color: #999B84;
 }
 
-.menu a:active {
-  border-bottom: 3px solid #626546;
-  margin-top: -40px;
-}
-
 .active__menu {
   color: #626546 !important;
 }
@@ -59,6 +54,7 @@
 
 .cart__icon {
   position: relative;
+  margin-top: -5px;
 }
 
 .cart__badge {
@@ -99,7 +95,7 @@
 }
 
 .search-box .btn{
-  transform: translate(-110%, 1%);
+  transform: translate(-110%, -5%);
 }
 
 .search-box .btn:hover{

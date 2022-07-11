@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from "react";
-import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../components/UI/common-section/CommonSection";
-
-import { Container, Row, Col } from "reactstrap";
-
-import products from "../assets/fake-data/products";
-import ProductCard from "../components/UI/product-card/ProductCard";
-import ReactPaginate from "react-paginate";
-
-import "../styles/all-foods.css";
-import "../styles/pagination.css";
-
-import foodCategoryImg01 from "../assets/images/hamburger.png";
-import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/bread.png";
+import React, { useState, useEffect } from 'react';
+import Helmet from '../components/Helmet/Helmet';
+import CommonSection from '../components/UI/common-section/CommonSection';
+import { Container, Row, Col } from 'reactstrap';
+import products from '../assets/fake-data/products';
+import ProductCard from '../components/UI/product-card/ProductCard';
+import '../styles/all-foods.css';
+import '../styles/pagination.css';
+import flowerImg from '../assets/images/flower.png';
+import cakeImg from '../assets/images/cake.png';
+import comboImg from '../assets/images/combo.png';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Products = () => {
   // const [searchTerm, setSearchTerm] = useState("");
@@ -28,63 +24,74 @@ const Products = () => {
   //     return console.log("not found");
   //   }
   // });
-
-  const [category, setCategory] = useState("ALL");
+  const [category, setCategory] = useState('ALL');
   const [allProducts, setAllProducts] = useState(products);
-  const [pageNumber, setPageNumber] = useState(0);
+  const [showedProducts, setShowedProducts] = useState(allProducts.slice(0, 8));
+  const [hasMore, setHasMore] = useState(true);
+  const [pageNumber, setPageNumber] = useState(2);
 
   const [hotPizza, setHotPizza] = useState([]);
 
   useEffect(() => {
-    const filteredPizza = products.filter((item) => item.category === "Flower");
+    const filteredPizza = products.filter((item) => item.category === 'Flower');
     // const slicePizza = filteredPizza.slice(0, 4);
     // setHotPizza(slicePizza);
   }, []);
 
+  useEffect(()=>{
+    if(allProducts.length > 8) {
+      setPageNumber(2)
+      setHasMore(true)
+      setShowedProducts(allProducts.slice(0, 8));
+    }
+    else {
+      setShowedProducts(allProducts);
+      setHasMore(false)
+      
+    }
+  },[allProducts])
   useEffect(() => {
-    if (category === "ALL") {
+    if (category === 'ALL') {
       setAllProducts(products);
+      setPageNumber(2)
+      setHasMore(true)
+      setShowedProducts(allProducts.slice(0, 8));
     }
 
-    if (category === "FLOWER") {
+    if (category === 'FLOWER') {
       const filteredProducts = products.filter(
-        (item) => item.category === "Flower"
+        (item) => item.category === 'Flower'
       );
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "CAKE") {
+    if (category === 'CAKE') {
       const filteredProducts = products.filter(
-        (item) => item.category === "Cake"
+        (item) => item.category === 'Cake'
       );
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "Combo") {
+    if (category === 'Combo') {
       const filteredProducts = products.filter(
-        (item) => item.category === "Combo"
+        (item) => item.category === 'Combo'
       );
 
       setAllProducts(filteredProducts);
     }
   }, [category]);
 
-  const productPerPage = 8;
-  // const visitedPage = pageNumber * productPerPage;
-  // const pageCount = Math.ceil(allProducts.length / productPerPage);
-  // const displayPage = allProducts.slice(
-  //   visitedPage,
-  //   visitedPage + productPerPage
-  // );
-  
-  const indexOfLastPost = pageNumber * productPerPage;
-  const indexOfFirstPost = indexOfLastPost - productPerPage;
-  const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
-  const pageCount = Math.ceil(products.length / productPerPage);
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
+  const getMoreData = async () => {
+    setShowedProducts((item) => [
+      ...item,
+      ...allProducts.slice(pageNumber * 4, pageNumber * 4 + 4),
+    ]);
+    setPageNumber(pageNumber + 1);
+    if (pageNumber >= 4) setHasMore(false);
+    console.log(showedProducts);
+    console.log(pageNumber);
   };
 
   return (
@@ -94,46 +101,49 @@ const Products = () => {
       <section>
         <Container>
           <Row>
-          <Col lg="12" style={{
-              marginTop: "-70px",
-              marginBottom: "45px"
-            }}>
+            <Col
+              lg="12"
+              style={{
+                marginTop: '-70px',
+                marginBottom: '45px',
+              }}
+            >
               <div className="food__category d-flex align-items-center justify-content-center gap-4">
                 <button
                   className={`all__btn  ${
-                    category === "ALL" ? "foodBtnActive" : ""
+                    category === 'ALL' ? 'foodBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("ALL")}
+                  onClick={() => setCategory('ALL')}
                 >
                   All
                 </button>
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "FLOWER" ? "foodBtnActive" : ""
+                    category === 'FLOWER' ? 'foodBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("FLOWER")}
+                  onClick={() => setCategory('FLOWER')}
                 >
-                  <img src={foodCategoryImg01} alt="" />
+                  <img src={flowerImg} alt="" />
                   Flower
                 </button>
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "CAKE" ? "foodBtnActive" : ""
+                    category === 'CAKE' ? 'foodBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("CAKE")}
+                  onClick={() => setCategory('CAKE')}
                 >
-                  <img src={foodCategoryImg02} alt="" />
+                  <img src={cakeImg} alt="" />
                   Cake
                 </button>
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "COMBO" ? "foodBtnActive" : ""
+                    category === 'COMBO' ? 'foodBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("COMBO")}
+                  onClick={() => setCategory('COMBO')}
                 >
-                  <img src={foodCategoryImg03} alt="" />
+                  <img src={comboImg} alt="" />
                   Combo
                 </button>
               </div>
@@ -145,9 +155,12 @@ const Products = () => {
             <Col lg="6" md="6" sm="6" xs="12" className="mb-5">
               <div className="sorting__widget text-end">
                 <span>Sort by: </span>
-                <select className="w-10" style={{
-                  backgroundColor: "#FCF9F3",
-                }}>
+                <select
+                  className="w-10"
+                  style={{
+                    backgroundColor: '#FCF9F3',
+                  }}
+                >
                   <option>Default</option>
                   {/* <option value="ascending">Alphabetically, A-Z</option>
                   <option value="descending">Alphabetically, Z-A</option> */}
@@ -156,23 +169,34 @@ const Products = () => {
                 </select>
               </div>
             </Col>
-
-            {products.map((item) => (
-              
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
-                <ProductCard item={item} />
-              </Col>
-            ))}
-
-            <div>
-              <ReactPaginate
-                pageCount={pageCount}
-                onPageChange={changePage}
-                previousLabel={"Prev"}
-                nextLabel={"Next"}
-                containerClassName=" paginationBttns "
-              />
-            </div>
+    
+            {
+              <InfiniteScroll
+                dataLength={showedProducts.length}
+                next={getMoreData}
+                hasMore={hasMore}
+                loader={<h3></h3>}
+                endMessage={<h3></h3>}
+              >
+                <Container>
+                  <Row>
+                {showedProducts.map((item) => (
+                  <Col
+                    lg="3"
+                    md="4"
+                    sm="6"
+                    xs="6"
+                    key={item.id}
+                    className="mb-4"
+                  >
+                    <ProductCard item={item} />
+                  </Col>
+                ))}
+                </Row>
+                </Container>
+              </InfiniteScroll>
+            }
+          
           </Row>
         </Container>
       </section>
