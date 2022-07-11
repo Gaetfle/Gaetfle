@@ -28,7 +28,7 @@ const Voucher = () => {
   });
 
   const productPerPage = 8;
-  
+
   // const visitedPage = pageNumber * productPerPage;
   // const displayPage = searchedProduct.slice(
   //   visitedPage,
