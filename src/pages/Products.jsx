@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import React, { useState, useEffect } from 'react';
 import Helmet from '../components/Helmet/Helmet';
 import CommonSection from '../components/UI/common-section/CommonSection';
@@ -12,6 +13,8 @@ import comboImg from '../assets/images/combo.png';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 const Products = () => {
+  Cookies.set('user', 'admin')
+  console.log(Cookies.get('user'));
   // const [searchTerm, setSearchTerm] = useState("");
 
   // const searchedProduct = products.filter((item) => {

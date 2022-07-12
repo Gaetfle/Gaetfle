@@ -1,23 +1,55 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const UserSlice = createSlice({
-  name: "user",
-  initialState: {
-    isAuthenticated: false,
-    user: null
-  },
-  reducers: {
-    login: (state, action) => {
-      state.user = action.payload;
-      state.isAuthenticated = true;
-    },
-    logout: (state) => {
-      state.user = null;
-      state.isAuthenticated = false;
-    }
-  }
-});
+// export AuthState {
+//     isLoggedIn: Boolean;
+//     logging?: Boolean;
+//     currentUser?: [];
+// }
 
-export const { login, logout } = UserSlice.actions;
-export const selectUser = (state) => state.user.user;
-export default UserSlice.reducer;
+const initialState = {
+    // isLoggedIn: false,
+    // logging: false,
+    currentUser: undefined,
+};
+
+const authSlice = createSlice({
+    name: 'auth',
+    initialState,
+    reducers: {
+
+        login: (state, action) => {
+            // state.logging = true
+            // console.log(action.payload)
+            state.currentUser = action.payload
+        },
+        // loginSuccess: (state, action) =>{
+        //     state.isLoggedIn = true,
+        //     state.logging = false,
+        //     state.currentUser = action.payload
+
+        // },
+        // loginFaild(state, action){
+        //     state.logging = false
+
+        // },
+        logout(state){
+        //    state.isLoggedIn = false,
+           state.currentUser = undefined
+        }
+    },
+})
+
+// Actions
+
+export const authActions = authSlice.actions;
+
+
+// Selector
+
+// export const selectIsLoggedIn = (state) => state.auth.isLoggedIn
+// export const selectLogging = (state) => state.auth.logging
+export const selectUser = (state) => state.auth.currentUser
+
+// Reducer
+
+export default authSlice ;

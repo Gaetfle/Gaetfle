@@ -100,7 +100,7 @@ const FoodDetails = () => {
                   Category: <span>{category}</span>
                 </p>
 
-                <button onClick={addItem} className="addTOCart__btn">
+                <button onClick={addItem} className="addToCart__btn">
                   Add to Cart
                 </button>
               </div>

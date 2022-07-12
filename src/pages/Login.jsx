@@ -1,25 +1,29 @@
 import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import {login} from '../store/auth/authSlice';
+import { Link,  useNavigate } from "react-router-dom";
+import loginImg from "../assets/images/login.png";
+import "../styles/login.css";
+import Cookies from 'js-cookie';
+// import user from "../assets/fake-data/user";
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
+  const [email, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(login(
-      {
-        email: email,
-        password: password,
-        isAuthenticated: true,
-      }
-    ));
-  };
+    // if (email === user.email && password === user.password) {
+    //   Cookies.set('user', user);
+    //   window.location.href = "/home";
+    // }
+    if(email === "dnhlan@gmail.com" && password === "123456") {
+      Cookies.set("user", email)
+      navigate("/home")
+    }
+  }
+
   console.log(email, password);
 
   return (
@@ -27,33 +31,38 @@ const Login = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={submitHandler}>
+            <Col lg="3" md="4" sm="6">
+              <img src={loginImg} alt="login" style={{width: "500px", height: "500px", marginLeft: "90px", marginBottom: "20px"}}/>
+            </Col>
+            <Col lg="5" md="4" sm="6">
+              <form className="form__login form mb-5" onSubmit={submitHandler}>
+                <h2 className="login__text">Login</h2>
                 <div className="form__group">
                   <input
                     type="email"
-                    value={email}
                     placeholder="Email"
-                    required
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    onChange={(e)=> setName(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="password"
-                    value={password}
                     placeholder="Password"
-                    required
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    onChange={(e)=> setPassword(e.target.value)}
+
                   />
                 </div>
-                <button type="submit" className="addTOCart__btn">
+                <button type="submit" className="addToCart__btn">
                   Login
                 </button>
               </form>
-              <Link to="/register">
-                Don't have an account? Create an account
-              </Link>
+              <div className="register">
+                <Link to="/register">
+                  Don't have an account? Create an account
+                </Link>
+              </div>
             </Col>
           </Row>
         </Container>

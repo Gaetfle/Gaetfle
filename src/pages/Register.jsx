@@ -19,7 +19,7 @@ const Register = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="12" className="m-auto text-center">
+            <Col lg="3" md="4" sm="6">
               <form className="form mb-5" onSubmit={submitHandler}>
                 <div className="form__group">
                   <input
@@ -45,11 +45,13 @@ const Register = () => {
                     ref={signupPasswordRef}
                   />
                 </div>
-                <button type="submit" className="addTOCart__btn">
+                <button type="submit" className="addToCart__btn">
                   Sign Up
                 </button>
               </form>
               <Link to="/login">Already have an account? Login</Link>
+            </Col>
+            <Col lg="5" md="4" sm="6">
             </Col>
           </Row>
         </Container>

@@ -1,19 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
-// import Category from "../components/UI/category/Category.jsx";
 import "../styles/home.css";
 import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 import products from "../assets/fake-data/products.js";
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
-// import whyImg from "../assets/images/location.png";
-import networkImg from "../assets/images/network.png";
+import donutImg from "../assets/images/donut.png";
 import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
-
+import Cookies from 'js-cookie';
 
 const featureData = [
   {
@@ -37,7 +35,19 @@ const featureData = [
 const Home = () => {
   // const [searchTerm, setSearchTerm] = useState("");
   const [allProducts, setAllProducts] = useState(products);
-  const [hotPizza, setHotPizza] = useState([]);
+  // const [hotPizza, setHotPizza] = useState([]);
+  const [email, setEmail] = useState("")
+  useEffect(()=>{
+    const email = Cookies.get("user")
+    if(email)  {
+      setEmail(email)
+    }
+  }, [])
+
+  let messagebtn = "Login";
+  if(email)  messagebtn = "Logout"
+  //<button> messagebtn </button>
+  // Cookies.remove("user")
 
   return (
     <Helmet title="Home">
@@ -55,6 +65,7 @@ const Home = () => {
                   A website that sells cakes and flowers<br/> 
                   can bring warmth and sweetness to everyone!
                 </p>
+                <p>hello, <span style={{color: "#626546"}}>{email}</span></p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
@@ -74,10 +85,6 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
-      {/* <section className="pt-0">
-        <Category />
-      </section> */}
 
       <section>
         <Container style={{marginBottom: "160px"}}>
@@ -162,29 +169,35 @@ const Home = () => {
       </section> */}
 
       <section>
-        <Container>
-          <Row>
-            <Col lg="6" md="6">
-              <div className="testimonial ">
-                <h5 className="testimonial__subtitle mb-4">Testimonial</h5>
-                <h2 className="testimonial__title mb-4">
-                  What our <span>customers</span> are saying
-                </h2>
-                <p className="testimonial__desc">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Distinctio quasi qui minus quos sit perspiciatis inventore
-                  quis provident placeat fugiat!
-                </p>
+        <div className="testimonial ">
+          <Container>
+            <Row>
+              <Col lg="6" md="6">
+              <img src={donutImg} alt="testimonial-img" style={{height: "400px", width: "400px"}} />
+              </Col>
+              <Col lg="6" md="6" className="text-center">
 
-                
-              </div>
-            </Col>
-
-            <Col lg="6" md="6">
-              <img src={networkImg} alt="testimonial-img" className="w-100" />
-            </Col>
-          </Row>
-        </Container>
+                  <h2 className="testimonial__title mb-4">
+                    Do you have problems or suggestions for website?
+                  </h2>
+                  <p className="testimonial__desc">
+                    We need your opinions to help us improve our website day by day.
+                  </p>
+                  <span className="input__contact">
+                  <input type="text" placeholder="Your email"/>
+                  <div>
+                    <input type="text" placeholder="Your opinions"/>
+                  </div>
+                  </span>
+                  <div className="button__contact">
+                    <button>Get</button>
+                  </div>
+              </Col>
+              
+            </Row>
+          </Container>
+      
+        </div>
       </section>
     </Helmet>
   );

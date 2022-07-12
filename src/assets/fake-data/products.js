@@ -23,9 +23,9 @@ import product_05_image_01 from "../images/product_04.jpg";
 import product_05_image_02 from "../images/product_08.jpg";
 import product_05_image_03 from "../images/product_09.jpg";
 
-import product_06_image_01 from "../images/bread(1).png";
-import product_06_image_02 from "../images/bread(2).png";
-import product_06_image_03 from "../images/bread(3).png";
+import product_06_image_01 from "../images/socola.jpg";
+import product_06_image_02 from "../images/tiramisu.jpg";
+import product_06_image_03 from "../images/flangato.jpg";
 
 const products = [
   {
@@ -36,7 +36,7 @@ const products = [
     image02: product_01_image_02,
     image03: product_01_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.0,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
   },
@@ -62,7 +62,7 @@ const products = [
     image02: product_03_image_02,
     image03: product_03_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.0,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
@@ -75,7 +75,7 @@ const products = [
     image02: product_04_image_02,
     image03: product_04_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.5,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
@@ -88,19 +88,19 @@ const products = [
     image02: product_05_image_02,
     image03: product_05_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.8,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
   {
     id: "06",
     title: "Hoa tuplip",
-    price: 24.0,
+    price: 900000,
     image01: product_02_image_04,
     image02: product_01_image_02,
     image03: product_01_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.7,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
@@ -108,12 +108,12 @@ const products = [
   {
     id: "07",
     title: "Hoa hướng dương",
-    price: 115.0,
+    price: 300000,
     image01: product_02_image_02,
     image02: product_02_image_01,
     image03: product_02_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.9,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
@@ -121,7 +121,7 @@ const products = [
   {
     id: "08",
     title: "Hoa mẫu đơn",
-    price: 110.0,
+    price: 850000,
     image01: product_03_image_02,
     image02: product_03_image_01,
     image03: product_03_image_03,
@@ -134,12 +134,12 @@ const products = [
   {
     id: "09",
     title: "Hoa cẩm tú cầu",
-    price: 110.0,
+    price: 550000,
     image01: product_03_image_04,
     image02: product_03_image_01,
     image03: product_03_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.9,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
@@ -147,7 +147,7 @@ const products = [
   {
     id: "10",
     title: "Hoa salem",
-    price: 110.0,
+    price: 500000,
     image01: product_04_image_04,
     image02: product_03_image_01,
     image03: product_03_image_03,
@@ -160,12 +160,12 @@ const products = [
   {
     id: "11",
     title: "Hoa phi yến",
-    price: 110.0,
+    price: 750000,
     image01: product_01_image_04,
     image02: product_03_image_01,
     image03: product_03_image_03,
     category: "Flower",
-    rating: 5.0,
+    rating: 4.9,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
@@ -185,21 +185,21 @@ const products = [
 
   {
     id: "13",
-    title: "Bánh mouse vuông nhỏ",
-    price: 110.0,
+    title: "Set mouse vuông",
+    price: 550000,
     image01: product_01_image_02,
     image02: product_04_image_01,
     image03: product_04_image_03,
     category: "Cake",
-    rating: 5.0,
+    rating: 4.9,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
   {
     id: "14",
-    title: "Bánh cupcake nhiều màu",
-    price: 24.0,
+    title: "Cupcake",
+    price: 250000,
     image01: product_01_image_03,
     image02: product_05_image_01,
     image03: product_05_image_03,
@@ -211,8 +211,8 @@ const products = [
 
   {
     id: "15",
-    title: "Bánh mouse chanh dây ",
-    price: 35.0,
+    title: "Mouse chanh dây ",
+    price: 500000,
     image01: product_05_image_02,
     image02: product_06_image_02,
     image03: product_06_image_03,
@@ -224,9 +224,9 @@ const products = [
 
   {
     id: "16",
-    title: "Delicious Bread ",
-    price: 35.0,
-    image01: product_06_image_02,
+    title: "Redvelvet socola",
+    price: 700000,
+    image01: product_05_image_03,
     image02: product_06_image_01,
     image03: product_06_image_03,
     category: "Cake",
@@ -237,22 +237,22 @@ const products = [
 
   {
     id: "17",
-    title: "Loaf Bread ",
-    price: 35.0,
-    image01: product_06_image_03,
+    title: "Set socola",
+    price: 200000,
+    image01: product_06_image_01,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Cake",
-    rating: 5.0,
+    rating: 4.9,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },
 
   {
     id: "18",
-    title: "Loaf Bread ",
-    price: 35.0,
-    image01: product_06_image_03,
+    title: "Tiramisu socola",
+    price: 500000,
+    image01: product_06_image_02,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Cake",
@@ -263,13 +263,13 @@ const products = [
 
   {
     id: "19",
-    title: "Loaf Bread ",
-    price: 35.0,
+    title: "Flan gato",
+    price: 300000,
     image01: product_06_image_03,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Cake",
-    rating: 5.0,
+    rating: 4.9,
 
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
   },

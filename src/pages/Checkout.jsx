@@ -10,7 +10,7 @@ import {HiLocationMarker} from 'react-icons/hi';
 import {MdPayment} from 'react-icons/md';
 import {TbDiscount2} from 'react-icons/tb';
 import {BsFillArrowRightCircleFill} from 'react-icons/bs';
-import CartItem from "../components/UI/cart/CartItem";
+import CheckoutCartItem from "../components/UI/checkout-card/CheckoutCartItem";
 
 const Checkout = () => {
   // const shippingInfo = [];
@@ -52,12 +52,12 @@ const Checkout = () => {
           <Row>
             <Col lg="8" md="6">
               <div className="product__list">
-                <h6 className="mb-4">Order</h6>
+                <h5 className="mb-4">Order</h5>
                 {cartProducts.length === 0 ? (
-                    <h6 className="text-center mt-5">No item</h6>
+                    <h5 className="text-center mt-5">No item</h5>
                   ) : (
                     cartProducts.map((item, index) => (
-                      <CartItem item={item} key={index} />
+                      <CheckoutCartItem item={item} key={index} />
                     ))
                   )
                 }
