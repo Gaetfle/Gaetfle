@@ -12,15 +12,38 @@
 }
 
 .footer__logo h5 {
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
 .footer__logo p {
-  font-size: 0.9rem;
-  color: #fff;
-  line-height: 28px;
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: 28px;
+}
+
+.footer__title {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.contact__logo img {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+.contact-item span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #222224;
+}
+
+.contact-item p {
+    color: #222224;
+    background: #fcf9f3;
 }
 
 .support-item {
@@ -35,12 +58,6 @@
 
 .support-item p {
   color: #fff;
-}
-
-.footer__title {
-  font-size: 1.1rem;
-  color: #fff;
-  font-weight: 600;
 }
 
 .social__links span i {
