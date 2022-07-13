@@ -1,55 +1,146 @@
-import React from "react";
-import CommonSection from "../components/UI/common-section/CommonSection";
-import Helmet from "../components/Helmet/Helmet";
-import "../styles/cart-page.css";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
-import { cartActions } from "../store/shopping-cart/cartSlice";
+import Helmet from "../components/Helmet/Helmet";
+import "../styles/checkout.css";
 import { Link } from "react-router-dom";
+import {MdArrowBack} from 'react-icons/md';
+import {AiOutlineDollar} from 'react-icons/ai';
+import {HiLocationMarker} from 'react-icons/hi';
+import {MdPayment} from 'react-icons/md';
+import {TbDiscount2} from 'react-icons/tb';
+import {BsFillArrowRightCircleFill} from 'react-icons/bs';
+import CheckoutCartItem from "../components/UI/checkout-card/CheckoutCartItem";
+import ShippingInfo from "../components/UI/shipping-info/ShippingInfor";
+import PaymentInfo from "../components/UI/payment-info/PaymentInfor";
+import { inforUiActions } from "../store/shipping-infor/inforUiSlice";
+import { paymentUiActions } from "../store/payment/paymentUiSlice";
 
-const Cart = () => {
+const Checkout = () => {
+  // const shippingInfo = [];
+  // const totalAmount = useSelector((state) => state.cart.totalAmount);
+  // const cartProducts = useSelector((state) => state.cart.cartItems);
   const cartItems = useSelector((state) => state.cart.cartItems);
-  const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
+  const shippingCost = 30;
+  const dispatch = useDispatch();
+  const totalPayment = cartTotalAmount + Number(shippingCost);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const showInfo = useSelector((state) => state.inforUi.inforIsVisible);
+  const toggleInfor= () => {
+    dispatch(inforUiActions.toggle());
+  };
+
+  const showPayment = useSelector((state) => state.paymentUi.paymentIsVisible);
+  const togglePayment= () => {
+    dispatch(paymentUiActions.toggle());
+  };
   return (
     <Helmet title="Cart">
-      <CommonSection title="Your Cart" />
       <section>
         <Container>
           <Row>
-            <Col lg="12">
-              {cartItems.length === 0 ? (
-                <h5 className="text-center">Your cart is empty</h5>
-              ) : (
-                <table className="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Image</th>
-                      <th>Product Title</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                      <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cartItems.map((item) => (
-                      <Tr item={item} key={item.id} />
-                    ))}
-                  </tbody>
-                </table>
-              )}
+            <div className="narrow__back d-flex">
+              <span>
+                <Link to="/products">
+                  <MdArrowBack/>
+                </Link>
+              </span>
+            </div>
+          </Row>
+          <Row>
+            <Col lg="8" md="6">
+              <div className="product__list">
+                <h5 className="mb-4">Order</h5>
+                {cartItems.length === 0 ? (
+                    <h5 className="text-center mt-5">No item</h5>
+                  ) : (
+                    cartItems.map((item, index) => (
+                      <CheckoutCartItem item={item} key={index} />
+                    ))
+                  )
+                }
+                <div className="totalQuantity">Total Quantity: {totalQuantity}</div>
+        </div>
+            </Col>
 
-              <div className="mt-4">
-                <h6>
-                  Subtotal: $
-                  <span className="cart__subtotal">{totalAmount}</span>
+            <Col lg="4" md="6">
+              <div className="checkout__bill">
+                <div className="detail__infor">
+                  <span>
+                    <HiLocationMarker/>
+                  </span>
+                  <h4>Delivery Address</h4>
+                </div>
+                <h6 className="d-flex align-items-center justify-content-between mb-3" style={{paddingTop: "25px", borderTop: "1px solid #fff"}}>
+                  Nguyễn Sơn <span>+84 0335 460 332</span>
                 </h6>
-                <p>Taxes and shipping will calculate at checkout</p>
-                <div className="cart__page-btn">
-                  <button className="addToCart__btn me-4">
-                    <Link to="/foods">Continue Shopping</Link>
-                  </button>
-                  <button className="addToCart__btn">
-                    <Link to="/checkout">Proceed to checkout</Link>
+                <h6 className="d-flex align-items-center justify-content-between mb-3">
+                  17 Trường Sa, P4, Q.Tân Bình, Hồ Chí Minh
+                </h6>
+                <h6 className="d-flex align-items-center justify-content-between mb-3">
+                  nson19@gmail.com
+                </h6>
+                <h6 className="d-flex align-items-center justify-content-between mb-3" style={{color: "#999B84"}}>
+                  Mặc định 
+                  <span 
+                    style={{color: "white", cursor: "pointer"}} 
+                    onClick={toggleInfor}
+                  >
+                    Thay đổi
+                  </span>
+                  { showInfo && <ShippingInfo/>}
+                </h6>
+
+                <div className="detail__infor">
+                  <span>
+                    <MdPayment/>
+                  </span>
+                  <h4>Payment Method</h4>
+                </div>
+                <h6 className="d-flex align-items-center justify-content-between mb-3" style={{paddingTop: "25px", borderTop: "1px solid #fff"}}>
+                  BIDV [128018391****] 
+                  <span
+                    style={{color: "white", cursor: "pointer"}} 
+                    onClick={togglePayment}
+                  >
+                    Thay đổi
+                  </span>
+                  {/* { showPayment && <PaymentInfo/>} */}
+                  { showPayment && <PaymentInfo/>}
+                </h6>
+
+                <div className="detail__infor">
+                  <span>
+                    <TbDiscount2/>
+                  </span>
+                  <h4 style={{marginBottom: "15px"}}>Applied Vouchers</h4>
+                  <div className="voucher__area">
+                      <span style={{marginLeft: "320px"}}><BsFillArrowRightCircleFill style={{marginTop: "-8px", cursor: "pointer"}}/></span>
+                  </div>
+                  
+                </div>
+
+                <div className="detail__infor">
+                  <span>
+                    <AiOutlineDollar/>
+                  </span>
+                  <h4>Payment Details</h4>
+                </div>
+                <h6 className="d-flex align-items-center justify-content-between mb-3" style={{paddingTop: "25px", borderTop: "1px solid #fff"}}>
+                  Subtotal: <span>{cartTotalAmount} VND</span>
+                </h6>
+                <h6 className="d-flex align-items-center justify-content-between mb-3">
+                  Shipping: <span>{shippingCost} VND</span>
+                </h6>
+                <div className="checkout__total">
+                  <h5 className="d-flex align-items-center justify-content-between">
+                    Total: <span>{totalPayment} VND</span>
+                  </h5>
+                </div>
+                <div className="order__button">
+                  <button>
+                    Order
                   </button>
                 </div>
               </div>
@@ -57,30 +148,10 @@ const Cart = () => {
           </Row>
         </Container>
       </section>
+      <section>
+      </section>
     </Helmet>
   );
 };
 
-const Tr = (props) => {
-  const { id, image01, title, price, quantity } = props.item;
-  const dispatch = useDispatch();
-
-  const deleteItem = () => {
-    dispatch(cartActions.deleteItem(id));
-  };
-  return (
-    <tr>
-      <td className="text-center cart__img-box">
-        <img src={image01} alt="" />
-      </td>
-      <td className="text-center">{title}</td>
-      <td className="text-center">${price}</td>
-      <td className="text-center">{quantity}px</td>
-      <td className="text-center cart__item-del">
-        <i class="ri-delete-bin-line" onClick={deleteItem}></i>
-      </td>
-    </tr>
-  );
-};
-
-export default Cart;
+export default Checkout;

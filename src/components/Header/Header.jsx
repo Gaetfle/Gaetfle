@@ -6,7 +6,6 @@ import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {GrCart} from "react-icons/gr";
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
-
 import "../../styles/header.css";
 
 const nav__links = [

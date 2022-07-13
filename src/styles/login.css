@@ -29,3 +29,32 @@
     margin-bottom: 30px;
     margin-top: 10px;
 }
+
+.signup-img img{
+    width: 100%;
+}
+
+.form__register{
+    border: 2px solid #626546;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 450px;
+    margin-top: 60px;
+    border-radius: 30px;
+}
+
+.form__register button{
+    margin-left: 254px;
+    margin-bottom: 10px;
+}
+
+.login{
+    width: 100%;
+    max-width: 400px;
+    margin-top: -20px;
+    margin-left: 530px;
+}
+
+.login a:hover{
+    color: #999B84;
+}

@@ -54,9 +54,12 @@
   color: #626546;
 }
 
+.order__btn a:hover {
+  color: #ffffff;  
+}
+
 .all__foods-btn a:hover {
-  color: #999B84;
-  
+  color: #999B84;  
 }
 
 .hero__img img{

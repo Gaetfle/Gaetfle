@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({ item }) => {
-  const { id, title, price, image01, quantity, totalPrice } = item;
+  const { id, title, price, image01, quantity, totalPrice, category } = item;
 
   const dispatch = useDispatch();
 
@@ -43,6 +43,7 @@ const CartItem = ({ item }) => {
         <div className="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
           <div>
             <h5 className="cart__product-title">{title}</h5>
+            <h5>{category}</h5>
             <p className=" d-flex align-items-center gap-5 cart__product-price">
               <span>{price} VNĐ</span> 
               <div className=" d-flex align-items-center justify-content-between increase__decrease-btn" style={{width: "70px", marginLeft: "-15px", marginRight: "-15px"}}>

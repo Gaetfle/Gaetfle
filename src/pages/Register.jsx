@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
+import SignupImg from "../assets/images/signin.png";
+import "../styles/login.css";
 
 const Register = () => {
   const signupNameRef = useRef();
@@ -20,7 +21,11 @@ const Register = () => {
         <Container>
           <Row>
             <Col lg="3" md="4" sm="6">
-              <form className="form mb-5" onSubmit={submitHandler}>
+              <img src={SignupImg} alt="login" style={{width: "500px", height: "500px", marginLeft: "90px", marginBottom: "20px"}}/>
+            </Col>
+            <Col lg="5" md="4" sm="6">
+              <form className="form__register form mb-5" onSubmit={submitHandler}>
+                <h2 className="login__text">Sign In</h2>
                 <div className="form__group">
                   <input
                     type="text"
@@ -49,9 +54,9 @@ const Register = () => {
                   Sign Up
                 </button>
               </form>
-              <Link to="/login">Already have an account? Login</Link>
-            </Col>
-            <Col lg="5" md="4" sm="6">
+              <div className="login">
+                <Link to="/login">Already have an account? Login</Link>
+              </div>
             </Col>
           </Row>
         </Container>

@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CheckoutCartItem = ({ item }) => {
-  const { id, title, price, image01, quantity, totalPrice, category } = item;
+  const { id, title, price, image01, quantity, totalPrice, category} = item;
 
   const dispatch = useDispatch();
 

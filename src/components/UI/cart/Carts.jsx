@@ -43,7 +43,7 @@ const Carts = () => {
             Subtotal : <span>{totalAmount}VND</span>
           </h6>
           <button>
-            <Link to="/checkout" onClick={toggleCart}>
+            <Link to="/cart" onClick={toggleCart}>
               Order
             </Link>
           </button>

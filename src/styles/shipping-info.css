@@ -1,0 +1,68 @@
+.shipping__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.639);
+  z-index: 99999;
+}
+ 
+.shipping__close {
+  width: 100%;
+  height: 60px;
+  padding: 10px 20px;
+}
+
+.shipping__close svg {
+  font-size: 30px;
+  fill: rgb(0, 0, 0);
+  margin-left: 300px;
+  margin-top: -40px;
+}
+
+.shipping-info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    align-items: center;
+}
+
+.shipping-info__title h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: #626546;
+    margin-bottom: 25px;
+    margin-top: -40px;
+}
+
+.shipping-info__container{
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    padding: 30px;
+    margin: 30px 0px 30px 0px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.shipping-info__content input{
+    margin-bottom: 20px;
+    border: 2px solid #626546;
+     padding-left: 20px; 
+    padding: 5px 0px 5px 20px;
+    border-radius: 15px;
+    width: 90%;
+}
+
+.shipping-info__content button{
+    margin-bottom: 20px;
+    background-color: #626546;
+    border: none;
+    color: #fff;
+    border-radius: 15px;
+    padding: 10px 0px 10px 0px;
+    width: 40%;
+}

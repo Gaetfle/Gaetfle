@@ -34,14 +34,16 @@ const ProductCard = (props) => {
           <GrCart/>
         </div>
 
-        <div className="product__img">
-          <img src={image01} alt="product-img" className="w-100" />
-        </div>
+        <Link to={`/products/${id}`}>
+          <div className="product__img">
+            <img src={image01} alt="product-img" className="w-100" />
+          </div>
+        </Link>
       </div>
       
       <div className="product__content">
         <h5 className="d-flex justify-content-between">
-          <Link to={`/foods/${id}`}>{title}</Link>
+          <Link to={`/products/${id}`}>{title}</Link>
           <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
         </h5>
         
