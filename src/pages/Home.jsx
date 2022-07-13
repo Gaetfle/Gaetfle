@@ -4,9 +4,9 @@ import { Container, Row, Col } from "reactstrap";
 import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
-import featureImg01 from "../assets/images/service-01.png";
-import featureImg02 from "../assets/images/service-02.png";
-import featureImg03 from "../assets/images/service-03.png";
+import featureImg01 from "../assets/images/Delivery.png";
+import featureImg02 from "../assets/images/Order.png";
+import featureImg03 from "../assets/images/Deliveryfaster.png";
 import products from "../assets/fake-data/products.js";
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 import donutImg from "../assets/images/donut.png";
@@ -15,18 +15,18 @@ import Cookies from 'js-cookie';
 
 const featureData = [
   {
-    title: "Quick Delivery",
+    title: "Delivery Food",
     imgUrl: featureImg01,
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
   },
 
   {
-    title: "Super Dine In",
+    title: "Easy To Order",
     imgUrl: featureImg02,
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
   },
   {
-    title: "Easy Pick Up",
+    title: "Fastest Delivery",
     imgUrl: featureImg03,
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
   },
@@ -141,7 +141,7 @@ const Home = () => {
                   <img
                     src={item.imgUrl}
                     alt="feature-img"
-                    className="w-25 mb-3"
+                    className="w-50 h-150 mb-3"
                   />
                   <h5 className=" fw-bold mb-3">{item.title}</h5>
                   <p>{item.desc}</p>

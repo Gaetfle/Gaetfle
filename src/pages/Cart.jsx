@@ -31,7 +31,7 @@ const Checkout = () => {
     dispatch(inforUiActions.toggle());
   };
 
-  const showPayment = useSelector((state) => state.paymentUi.paymentIsVisible);
+  // const showPayment = useSelector((state) => state.paymentUi.paymentIsVisible);
   const togglePayment= () => {
     dispatch(paymentUiActions.toggle());
   };
@@ -107,7 +107,6 @@ const Checkout = () => {
                     Thay đổi
                   </span>
                   {/* { showPayment && <PaymentInfo/>} */}
-                  { showPayment && <PaymentInfo/>}
                 </h6>
 
                 <div className="detail__infor">

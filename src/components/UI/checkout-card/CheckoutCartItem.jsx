@@ -56,7 +56,7 @@ const CheckoutCartItem = ({ item }) => {
                   <GrFormSubtract/>
                 </span>
               </div> 
-            <span>{totalPrice}VNĐ</span>
+            <span>{totalPrice} VNĐ</span>
             </p>
             
           </div>

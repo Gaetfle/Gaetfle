@@ -36,11 +36,11 @@ const Carts = () => {
               <CartItem item={item} key={index} />
             ))
           )}
-        </div>
+        </div> 
 
         <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
-            Subtotal : <span>{totalAmount}VND</span>
+            Subtotal : <span>{totalAmount} VND</span>
           </h6>
           <button>
             <Link to="/cart" onClick={toggleCart}>
