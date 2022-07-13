@@ -1,83 +1,70 @@
 .footer {
-  padding-top: 50px;
-  padding-bottom: 30px;
-  background: #110a0a;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background: #222224;
 }
 
 .footer__logo img {
-  width: calc(100% - 80%);
-  margin-bottom: 5px;
+    height: 250px;
+    width: 250px;
+    background: #fff;
+    margin-bottom: 5px;
 }
 
 .footer__logo h5 {
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
 .footer__logo p {
-  font-size: 0.9rem;
-  color: #FCF9F3;
-  line-height: 28px;
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: 28px;
 }
 
-.delivery__time-item {
+.footer__title {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.contact__logo img {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+.contact-item span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #222224;
+}
+
+.contact-item p {
+    color: #222224;
+    background: #fcf9f3;
+}
+
+.support-item {
   background: transparent !important;
 }
 
-.delivery__time-item span {
+.support-item span {
   font-weight: 600;
   font-size: 1rem;
   color: #fff;
 }
 
-.delivery__time-item p {
-  color: #fff;
-}
-.footer__title {
-  font-size: 1.1rem;
-  color: #fff;
-  font-weight: 600;
-}
-
-.newsletter {
-  padding: 5px;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-.newsletter input {
-  background: transparent;
-  border: none;
-  outline: none;
-}
-
-.newsletter input:focus {
-  outline: none;
-}
-
-.newsletter span {
-  background: #fff;
-  padding: 5px 30px;
-  border-radius: 5px;
-}
-
-.newsletter span i {
-  color: #FCF9F3;
-}
-
-.newsletter input::placeholder {
+.support-item p {
   color: #fff;
 }
 
 .social__links span i {
-  padding: 5px;
-  background: #626546;  
-  color: #FCF9F3;
-  border-radius: 50%;
+   padding: 7px;
+   background: #E2E2E2;
+   color: #222224;
+   border-radius: 50%;
 }
 
 .copyright__text {
@@ -85,27 +72,17 @@
   color: #626546;
 }
 
-@media only screen and (max-width: 992px) {
-  .newsletter input {
-    padding: 7px;
-    font-size: 0.7rem;
-  }
-  .newsletter span {
-    padding: 4px 20px;
-    font-size: 0.7rem;
-  }
-}
 
 @media only screen and (max-width: 768px) {
   .footer__title {
     font-size: 0.8rem;
   }
 
-  .delivery__time-item span {
+  .support-item span {
     font-size: 0.8rem;
   }
 
-  .delivery__time-item p {
+  .support-item p {
     font-size: 0.7rem;
     margin-bottom: 0;
   }
