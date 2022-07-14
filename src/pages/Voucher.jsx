@@ -5,7 +5,10 @@ import CommonSection from "../components/UI/common-section/CommonSectionVoucher"
 import { Container, Row, Col } from "reactstrap";
 
 import products from "../assets/fake-data/products";
+import coupon from "../assets/fake-data/coupon";
 import ProductCard from "../components/UI/product-card/ProductCard";
+import VoucherCard from "../components/UI/voucher/VoucherCard";
+import FreeshipCard from "../components/UI/voucher/FreeshipCard";
 import ReactPaginate from "react-paginate";
 
 import "../styles/all-foods.css";
@@ -72,22 +75,25 @@ const Voucher = () => {
                 </select>
               </div>
             </Col> */}
-
-            {products.map((item) => (
+            <Col lg="12" className="text-center">
+              <h2>Discount vouchers</h2>
+            </Col>
+            {coupon.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
-                <ProductCard item={item} />
+                {console.log(item)}
+                <VoucherCard title={item.title} image={item.image} desc={item.desc} date={item.date} />
               </Col>
             ))}
 
-            <div>
-              <ReactPaginate
-                pageCount={pageCount}
-                onPageChange={changePage}
-                previousLabel={"Prev"}
-                nextLabel={"Next"}
-                containerClassName=" paginationBttns "
-              />
-            </div>
+            <Col lg="12" className="text-center">
+              <h2>Free Ship</h2>
+            </Col>
+            {coupon.map((item) => (
+              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
+                {console.log(item)}
+                <FreeshipCard title={item.title} image={item.image} desc={item.desc} date={item.date} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
