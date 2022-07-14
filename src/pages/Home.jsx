@@ -65,8 +65,8 @@ const Home = () => {
                   A website that sells cakes and flowers<br/> 
                   can bring warmth and sweetness to everyone!
                 </p>
-                <p>hello, <span style={{color: "#626546"}}>{email}</span></p>
-
+                {email && <p>Welcome Back  <span style={{color: "#626546"}}>{email}</span></p>}
+                {!email && <p>Shopping Now</p>}
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
                     <Link to="/products">Order now <i class="ri-arrow-right-s-line"></i></Link>

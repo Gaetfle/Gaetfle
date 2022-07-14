@@ -2,20 +2,12 @@ import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logo from "../assets/images/res-logo.png";
 import { Link } from "react-router-dom";
-
+import "../styles/contact.css";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="contact">
       <Container>
-        <Row className="mt-5">
-          <Col lg="6" md="6"> </Col>
-          <Col lg="6" md="6">
-            <div className="social__links d-flex align-items-center gap-4 justify-content-end">
-            </div>
-          </Col>
-        </Row>
-
         <Row>
           <Col lg="3" md="4" sm="6">
             <h5 className="contact__title">Working day</h5>
@@ -38,14 +30,6 @@ const Contact = () => {
             <span className="contact-item">gaetfle@gmail.com</span>
           </Col>
         </Row>
-
-        <Row className="mt-5">
-          <Col lg="6" md="6"> </Col>
-          <Col lg="6" md="6">
-            <div className="social__links d-flex align-items-center gap-4 justify-content-end">
-            </div>
-          </Col>
-        </Row>  
       </Container>
     </div>
   )

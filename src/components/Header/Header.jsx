@@ -3,11 +3,13 @@ import {FiSearch} from 'react-icons/fi';
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
 import { NavLink, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {GrCart} from "react-icons/gr";
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 import "../../styles/header.css";
-
+import Cookies from "js-cookie";
+import { useState } from "react";
 const nav__links = [
   {
     display: "Home",
@@ -32,14 +34,19 @@ const Header = () => {
   const headerRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
-
+  const [isLogin, setIsLogin] = useState(false);
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
 
   useEffect(() => {
+    if (Cookies.get("user")) { setIsLogin(true) }
+  })
+  useEffect(() => {
+    
+
     window.addEventListener("scroll", () => {
       if (
         document.body.scrollTop > 80 ||
@@ -54,6 +61,17 @@ const Header = () => {
     return () => window.removeEventListener("scroll");
   }, []);
 
+  const loginHandler = () => {
+    if(Cookies.get("user")){
+      Cookies.remove("user");
+      setIsLogin(false)
+      navigate("/");
+    }
+    else{
+      navigate("/login");
+    }
+  }
+  console.log(isLogin);
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -102,9 +120,10 @@ const Header = () => {
           <div className="nav__right d-flex align-items-center gap-5">
           
             <span className="user">
-              <Link to="/login">
-                <i class="ri-user-line"></i>
-              </Link>
+              <i class="ri-user-line" onClick={loginHandler}>
+                {isLogin && <span>logout</span>}
+                {!isLogin && <span>login</span>}
+              </i>
             </span>
             <span className="cart__icon" onClick={toggleCart}>
               <GrCart/>

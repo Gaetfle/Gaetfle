@@ -14,44 +14,50 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3" md="4" sm="6">
-            <ListGroup className="deliver__time-list">
-              <h5 className="footer__title">Our Products</h5>
-              <ListGroupItem className=" support-item border-0 ps-0">
-                <p>Support</p>
-                <p>Guide</p>
-              </ListGroupItem>
-            </ListGroup>
-
-            <ListGroup className="deliver__time-list">
-              <h5 className="footer__title">Contact</h5>
+          <Col lg="2" md="4" sm="6">
+            <h5 className="footer__title">Our Products</h5>
+              <ListGroup>
+                <ListGroupItem className=" support-item border-0 ps-0">
+                  <p>Support</p>
+                  <p>Guide</p>
+                </ListGroupItem>
+              </ListGroup>
+          </Col>
+            
+          <Col lg="2" md="4" sm="6">
+            <h5 className="footer__title">Contact</h5>
+            <ListGroup>
               <ListGroupItem className=" support-item border-0 ps-0">
                 <p>+84 123 456 789</p>
                 <p>gaetfle@gmail.com</p>
               </ListGroupItem>
             </ListGroup>
+          </Col>
 
-            <ListGroup className="deliver__time-list">
+          <Col lg="2" md="4" sm="6">    
             <h5 className="footer__title">Company</h5>
-              <ListGroupItem className=" support-item border-0 ps-0">
-                <p>Home</p>
-                <p>About us</p>
-                <p>Contact us</p>
-              </ListGroupItem>
-            </ListGroup>
+              <ListGroup>
+                <ListGroupItem className=" support-item border-0 ps-0">
+                  <p>Home</p>
+                  <p>About us</p>
+                  <p>Contact us</p>
+                </ListGroupItem>
+              </ListGroup>
+          </Col>
 
-            <ListGroup className="deliver__time-list">
+          <Col lg="3" md="4" sm="6">
             <h5 className="footer__title"> Follow us</h5>
-              <div className="social__links d-flex align-items-center gap-3">
-                <span>
-                  <i class="ri-facebook-line"></i>
-                </span>
+              <ListGroup>
+                <div className="social__links d-flex align-items-center gap-3">
+                  <span>
+                    <i class="ri-facebook-line"></i>
+                  </span>
 
-                <span>
-                  <i class="ri-instagram-line"></i>
-                </span>
-              </div>
-            </ListGroup>
+                  <span>
+                    <i class="ri-instagram-line"></i>
+                  </span>
+                </div>
+              </ListGroup>
           </Col>
         </Row>
 

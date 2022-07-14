@@ -6,7 +6,7 @@ import loginImg from "../assets/images/login.png";
 import "../styles/login.css";
 import Cookies from 'js-cookie';
 // import user from "../assets/fake-data/user";
-
+import users from "../assets/fake-data/user";
 const Login = () => {
 
   const [email, setName] = useState("");
@@ -18,9 +18,12 @@ const Login = () => {
     //   Cookies.set('user', user);
     //   window.location.href = "/home";
     // }
-    if(email === "dnhlan@gmail.com" && password === "123456") {
-      Cookies.set("user", email)
-      navigate("/home")
+    for(let i = 0; i < users.length; i++) {
+      if(email === users[i].email && password === users[i].password) {
+        Cookies.set('user', users[i].username);
+        navigate("/home");
+        break;
+      }
     }
   }
 

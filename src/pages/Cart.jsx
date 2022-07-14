@@ -31,7 +31,12 @@ const Checkout = () => {
     dispatch(inforUiActions.toggle());
   };
 
-  // const showPayment = useSelector((state) => state.paymentUi.paymentIsVisible);
+  const name = useSelector((state) => state.order.name);
+  const phone = useSelector((state) => state.order.phone);
+  const address = useSelector((state) => state.order.address);
+  const gmail = useSelector((state) => state.order.gmail);
+
+  const showPayment = useSelector((state) => state.paymentUi.paymentIsVisible);
   const togglePayment= () => {
     dispatch(paymentUiActions.toggle());
   };
@@ -73,14 +78,15 @@ const Checkout = () => {
                   <h4>Delivery Address</h4>
                 </div>
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{paddingTop: "25px", borderTop: "1px solid #fff"}}>
-                  Nguyễn Sơn <span>+84 0335 460 332</span>
+                {name} <span>{phone}</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  17 Trường Sa, P4, Q.Tân Bình, Hồ Chí Minh
+                  {address}
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  nson19@gmail.com
+                  {gmail}
                 </h6>
+
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{color: "#999B84"}}>
                   Mặc định 
                   <span 
@@ -106,7 +112,7 @@ const Checkout = () => {
                   >
                     Thay đổi
                   </span>
-                  {/* { showPayment && <PaymentInfo/>} */}
+                  { showPayment && <PaymentInfo/>}
                 </h6>
 
                 <div className="detail__infor">
