@@ -153,7 +153,7 @@ const Products = () => {
             </Col>
 
             <Col lg="6" md="6" sm="6" xs="12">
-              <h4>FLOWERS</h4>
+              <h4 style={{fontWeight: 600}}>{category}</h4>
             </Col>
             <Col lg="6" md="6" sm="6" xs="12" className="mb-5">
               <div className="sorting__widget text-end">

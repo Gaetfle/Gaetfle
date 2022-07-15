@@ -13,8 +13,10 @@ import {BsFillArrowRightCircleFill} from 'react-icons/bs';
 import CheckoutCartItem from "../components/UI/checkout-card/CheckoutCartItem";
 import ShippingInfo from "../components/UI/shipping-info/ShippingInfor";
 import PaymentInfo from "../components/UI/payment-info/PaymentInfor";
+import VoucherInfo from "../components/UI/voucher-info/VoucherInfor";
 import { inforUiActions } from "../store/shipping-infor/inforUiSlice";
 import { paymentUiActions } from "../store/payment/paymentUiSlice";
+import { voucherUiActions } from "../store/voucher/voucherUiSlice";
 
 const Checkout = () => {
   // const shippingInfo = [];
@@ -31,15 +33,24 @@ const Checkout = () => {
     dispatch(inforUiActions.toggle());
   };
 
+  const showPayment = useSelector((state) => state.paymentUi.paymentIsVisible);
+  const togglePayment= () => {
+    dispatch(paymentUiActions.toggle());
+  };
+
+  const showVoucher = useSelector((state) => state.voucherUi.voucherIsVisible);
+  const toggleVoucher= () => {
+    dispatch(voucherUiActions.toggle());
+  };
+
   const name = useSelector((state) => state.order.name);
   const phone = useSelector((state) => state.order.phone);
   const address = useSelector((state) => state.order.address);
   const gmail = useSelector((state) => state.order.gmail);
 
-  const showPayment = useSelector((state) => state.paymentUi.paymentIsVisible);
-  const togglePayment= () => {
-    dispatch(paymentUiActions.toggle());
-  };
+  const method = useSelector((state) => state.payment.method);
+  const cardNumber = useSelector((state) => state.payment.cardNumber);
+
   return (
     <Helmet title="Cart">
       <section>
@@ -105,7 +116,7 @@ const Checkout = () => {
                   <h4>Payment Method</h4>
                 </div>
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{paddingTop: "25px", borderTop: "1px solid #fff"}}>
-                  BIDV [128018391****] 
+                  {method} [{cardNumber}] 
                   <span
                     style={{color: "white", cursor: "pointer"}} 
                     onClick={togglePayment}
@@ -121,7 +132,8 @@ const Checkout = () => {
                   </span>
                   <h4 style={{marginBottom: "15px"}}>Applied Vouchers</h4>
                   <div className="voucher__area">
-                      <span style={{marginLeft: "320px"}}><BsFillArrowRightCircleFill style={{marginTop: "-8px", cursor: "pointer"}}/></span>
+                      <span style={{marginLeft: "320px"}}><BsFillArrowRightCircleFill style={{marginTop: "-8px", cursor: "pointer"}} onClick={toggleVoucher}/></span>
+                      { showVoucher && <VoucherInfo/>}
                   </div>
                   
                 </div>

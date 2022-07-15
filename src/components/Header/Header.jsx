@@ -10,6 +10,8 @@ import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 import "../../styles/header.css";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import {FiLogOut, FiLogIn} from 'react-icons/fi';
+
 const nav__links = [
   {
     display: "Home",
@@ -120,10 +122,22 @@ const Header = () => {
           <div className="nav__right d-flex align-items-center gap-5">
           
             <span className="user">
-              <i class="ri-user-line" onClick={loginHandler}>
-                {isLogin && <span>logout</span>}
-                {!isLogin && <span>login</span>}
-              </i>
+              <i className="ri-user-line"/>
+              {/* <input 
+                type="checkbox" 
+                id="btn" 
+                style={{
+                  position: "fixed", 
+                  marginTop: "45px", 
+                  marginLeft: "-16px",
+                  display: "none"
+                }}/> */}
+              <ul className="sub-login">
+                <li><a href="/">Profile</a></li>
+                <li onClick={loginHandler}>{isLogin && <div><FiLogOut/><span>Logout</span></div>}
+                    {!isLogin && <div><FiLogIn/><span>Login</span></div>}
+                </li>
+              </ul>
             </span>
             <span className="cart__icon" onClick={toggleCart}>
               <GrCart/>

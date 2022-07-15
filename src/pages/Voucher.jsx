@@ -6,31 +6,31 @@ import { Container, Row, Col } from "reactstrap";
 
 import products from "../assets/fake-data/products";
 import coupon from "../assets/fake-data/coupon";
-import ProductCard from "../components/UI/product-card/ProductCard";
+import freeship from "../assets/fake-data/freeship";
 import VoucherCard from "../components/UI/voucher/VoucherCard";
 import FreeshipCard from "../components/UI/voucher/FreeshipCard";
-import ReactPaginate from "react-paginate";
+// import ReactPaginate from "react-paginate";
 
 import "../styles/all-foods.css";
 import "../styles/pagination.css";
 
 const Voucher = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
-  const [pageNumber, setPageNumber] = useState(0);
+  // const [pageNumber, setPageNumber] = useState(0);
 
-  const searchedProduct = products.filter((item) => {
-    if (searchTerm.value === "") {
-      return item;
-    }
-    if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return item;
-    } else {
-      return console.log("not found");
-    }
-  });
+  // const searchedProduct = products.filter((item) => {
+  //   if (searchTerm.value === "") {
+  //     return item;
+  //   }
+  //   if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+  //     return item;
+  //   } else {
+  //     return console.log("not found");
+  //   }
+  // });
 
-  const productPerPage = 8;
+  // const productPerPage = 8;
 
   // const visitedPage = pageNumber * productPerPage;
   // const displayPage = searchedProduct.slice(
@@ -38,11 +38,11 @@ const Voucher = () => {
   //   visitedPage + productPerPage
   // );
 
-  const pageCount = Math.ceil(searchedProduct.length / productPerPage);
+  // const pageCount = Math.ceil(searchedProduct.length / productPerPage);
 
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
+  // const changePage = ({ selected }) => {
+  //   setPageNumber(selected);
+  // };
 
   return (
     <Helmet title="Vouchers">
@@ -76,7 +76,7 @@ const Voucher = () => {
               </div>
             </Col> */}
             <Col lg="12" className="text-center">
-              <h2>Discount vouchers</h2>
+              <div style={{marginTop: "-20px", marginBottom: "40px"}}><h2>Discount Vouchers</h2></div>
             </Col>
             {coupon.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
@@ -86,9 +86,9 @@ const Voucher = () => {
             ))}
 
             <Col lg="12" className="text-center">
-              <h2>Free Ship</h2>
+            <div style={{marginTop: "60px", marginBottom: "40px"}}><h2>Freeship</h2></div>
             </Col>
-            {coupon.map((item) => (
+            {freeship.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
                 {console.log(item)}
                 <FreeshipCard title={item.title} image={item.image} desc={item.desc} date={item.date} />

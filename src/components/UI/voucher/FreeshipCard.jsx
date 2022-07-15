@@ -19,7 +19,7 @@ const FreeshipCard = (props) => {
     return (
 
 
-        <div style={{ backgroundColor: "#57ffc1" }} class="coupon  rounded mb-3 d-flex justify-content-between">
+        <div style={{ backgroundColor: "#b6d476c2" }} class="coupon  rounded mb-3 d-flex justify-content-between">
             <div class="kiri p-3 mt-2">
                 <div class="icon-container ">
                     <div class="icon-container_box" >
@@ -39,7 +39,10 @@ const FreeshipCard = (props) => {
             <div class="kanan ">
                 <div class="info  align-items-center ">
                     <div class="w-64 p-3 mt-2">
-                        <button onClick={setButton} target="_blank" class="btn btn-sm btn-primary" style={{
+                        <button onClick={setButton} target="_blank" class="btn btn-sm" style={{
+                            backgroundColor: disableSave ? "#b6d476c2" : "#fff",
+                            // border: "1px solid #b6d476c2",
+                            color: "rgb(162 167 116)",
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',

@@ -44,6 +44,21 @@ const Home = () => {
     }
   }, [])
 
+  const [gift83, setGift83] = useState([]);
+  const [bestseller, setBestseller] = useState([]);
+  const [newProduct, setNewProduct] = useState([]);
+
+  useEffect(() => {
+    const filteredGift83 = products.filter((item) => item.type === "gift for 83");
+    const filteredBestseller = products.filter((item) => item.type === "best seller");
+    const filteredNew = products.filter((item) => item.type === "new");
+    setGift83(filteredGift83);
+    setBestseller(filteredBestseller);
+    setNewProduct(filteredNew);
+    // const slicePizza = filteredPizza.slice(0, 4);
+    // setHotPizza(slicePizza);
+  }, []);
+
   let messagebtn = "Login";
   if(email)  messagebtn = "Logout"
   //<button> messagebtn </button>
@@ -92,7 +107,7 @@ const Home = () => {
             <Col lg="12" className="text-center">
               <h2>Best Seller Products</h2>
             </Col>
-            {allProducts.map((item) => (
+            {bestseller.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                 <ProductCard item={item} />
               </Col>
@@ -105,7 +120,7 @@ const Home = () => {
             <Col lg="12" className="text-center">
               <h2>Newest Products</h2>
             </Col>
-            {allProducts.map((item) => (
+            {newProduct.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                 <ProductCard item={item} />
               </Col>
@@ -119,7 +134,7 @@ const Home = () => {
               <h2>Gift For This 8/3</h2>
             </Col>
 
-            {allProducts.map((item) => (
+            {gift83.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                 <ProductCard item={item} />
               </Col>

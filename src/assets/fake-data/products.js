@@ -183,8 +183,8 @@ const products = [
 
   {
     id: "12",
-    title: "Thin Cheese Pizza",
-    price: 110.0,
+    title: "Hoa mẫu đơn",
+    price: 550000,
     image01: product_03_image_02,
     image02: product_03_image_01,
     image03: product_03_image_03,

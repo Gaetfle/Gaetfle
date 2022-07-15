@@ -19,7 +19,7 @@ const VoucherCard = (props) => {
     return (
 
 
-        <div style={{ backgroundColor: "#ebc7af" }} class="coupon  rounded mb-3 d-flex justify-content-between">
+        <div style={{ backgroundColor: "#ebc7af" }} class="coupon rounded mb-3 d-flex justify-content-between">
             <div class="kiri p-3 mt-2">
                 <div class="icon-container ">
                     <div class="icon-container_box" >
@@ -39,7 +39,9 @@ const VoucherCard = (props) => {
             <div class="kanan ">
                 <div class="info  align-items-center ">
                     <div class="w-64 p-3 mt-2">
-                        <button onClick={setButton} target="_blank" class="btn btn-sm btn-primary" style={{
+                        <button onClick={setButton} target="_blank" className="btn btn-sm" style={{
+                            backgroundColor: disableSave ? "rgb(232 188 159 / 93%)" : "#fff",
+                            color: "#CCA085",
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -48,11 +50,16 @@ const VoucherCard = (props) => {
                         </button>
                     </div>
                     <div class="w-64 mt-4">
-                        <a target="_blank" class="btn  btn-block" style={{
-                            display: 'flex',
-                            alignItems: 'flex-end',
-                            justifyContent: 'flex-end', fontSize: 10,
-                        }}>
+                        <a 
+                            target="_blank" 
+                            className="btn  btn-block" 
+                            style={{
+                                display: "flex",
+                                alignItems: "flex-end",
+                                justifyContent: "flex-end", 
+                                fontSize: 10
+                            }}
+                        >
                             Conditions
                         </a>
                     </div>
