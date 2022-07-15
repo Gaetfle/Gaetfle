@@ -78,10 +78,11 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex justify-content-end">
-          <div className="logo">
-            <img src={logo} alt="logo" />
-          </div>
-
+          <Link to={`/home`}>
+            <div className="logo">
+              <img src={logo} alt="logo" />
+            </div>
+          </Link>
           {/* ======= search ======= */}
           <div className="search-box">
             <input
