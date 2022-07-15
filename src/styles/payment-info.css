@@ -17,7 +17,7 @@
 .payment__close svg {
   font-size: 30px;
   fill: rgb(0, 0, 0);
-  margin-left: 300px;
+  margin-left: 250px;
   margin-top: -40px;
 }
 
@@ -34,13 +34,13 @@
   font-size: 30px;
   font-weight: bold;
   color: #626546;
-  margin-bottom: 25px;
-  margin-top: -40px;
+  margin-bottom: 40px;
+  margin-top: -50px;
 }
 
 .payment-info__container{
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background-color: #fff;
     padding: 30px;
     margin: 30px 0px 30px 0px;
@@ -67,7 +67,6 @@
 }
 
 .payment-info__content button{
-    margin-bottom: 20px;
     background-color: #626546;
     border: none;
     color: #fff;
@@ -83,6 +82,10 @@
   margin-bottom: 8px;
   margin-top: -12px;
   font-weight: 600;
+}
+
+.card-number{
+  margin-bottom: 10px;
 }
 
 .bank-info h6{

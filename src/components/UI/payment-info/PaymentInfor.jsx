@@ -43,11 +43,11 @@ const PaymentInfo = () => {
     <div className="payment__container">
       <div className="payment-info">
             <div className="payment-info__container">
-                <div className="payment__close" onClick={togglePayment}>
+                <div className="payment__close" onClick={togglePayment} style={{cursor: "pointer"}}>
                     <AiFillCloseCircle/>
                 </div>
                 <div className="payment-info__title">
-                    <h3>Payment Info</h3>
+                    <h3>Payment Infor</h3>
                 </div>
                 <div className="payment-info__content">
                   <div className="bank-info">
@@ -64,9 +64,8 @@ const PaymentInfo = () => {
                     <h6>Card number:</h6>
                     <input type="text" placeholder='Enter card number' onChange={getCardNumber} defaultValue={currentCardNumber}/>
                   </div>
-                  
-                    <button onClick={togglePayment}>OK</button>
-                </div>    
+                  <button onClick={togglePayment}>OK</button>    
+                </div>
             </div>            
         </div>
     </div>
