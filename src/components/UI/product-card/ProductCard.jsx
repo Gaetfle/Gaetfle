@@ -29,11 +29,7 @@ const ProductCard = (props) => {
 
     <div className="product__item">
 
-      <div className="">
-        <div className="cart_button" onClick={addToCart}>
-          <GrCart />
-        </div>
-
+      <div>
         <Link to={`/products/${id}`}>
           <div className="product__img">
             <img src={image01} alt="product-img" className="w-100" />
@@ -44,12 +40,14 @@ const ProductCard = (props) => {
       <div className="product__content">
         <h5 className="d-flex justify-content-between">
           <Link to={`/products/${id}`}>{title}</Link>
-          <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+          <Rating name="half-rating-read" defaultValue={rating} style={{color: "#fdff30"}} precision={0.5} readOnly />
         </h5>
 
         <div className=" d-flex align-items-center justify-content-between ">
-          <span className="product__price">{price} VND</span>
-
+          <span className="product__price">{price.toLocaleString("en-US")} VND</span>
+          <div className="cart_button" onClick={addToCart}>
+            <GrCart />
+          </div>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />
           </IconButton>

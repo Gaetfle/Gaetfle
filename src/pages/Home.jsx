@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/hero-section.css";
@@ -37,9 +37,9 @@ const Home = () => {
   const [allProducts, setAllProducts] = useState(products);
   // const [hotPizza, setHotPizza] = useState([]);
   const [email, setEmail] = useState("")
-  useEffect(()=>{
+  useEffect(() => {
     const email = Cookies.get("user")
-    if(email)  {
+    if (email) {
       setEmail(email)
     }
   }, [])
@@ -60,7 +60,7 @@ const Home = () => {
   }, []);
 
   let messagebtn = "Login";
-  if(email)  messagebtn = "Logout"
+  if (email) messagebtn = "Logout"
   //<button> messagebtn </button>
   // Cookies.remove("user")
 
@@ -77,11 +77,9 @@ const Home = () => {
                 </h1>
 
                 <p>
-                  A website that sells cakes and flowers<br/> 
-                  can bring warmth and sweetness to everyone!
+                  A website that sells cakes and flowers<br />
+                  and bring warmth and sweetness to everyone!
                 </p>
-                {email && <p>Welcome Back  <span style={{color: "#626546"}}>{email}</span></p>}
-                {!email && <p>Shopping Now</p>}
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
                     <Link to="/products">Order now <i class="ri-arrow-right-s-line"></i></Link>
@@ -102,7 +100,7 @@ const Home = () => {
       </section>
 
       <section>
-        <Container style={{marginBottom: "160px"}}>
+        <Container style={{ marginBottom: "160px" }}>
           <Row>
             <Col lg="12" className="text-center">
               <h2>Best Seller Products</h2>
@@ -115,7 +113,7 @@ const Home = () => {
           </Row>
         </Container>
 
-        <Container style={{marginBottom: "160px"}}>
+        <Container style={{ marginBottom: "160px" }}>
           <Row>
             <Col lg="12" className="text-center">
               <h2>Newest Products</h2>
@@ -188,30 +186,30 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg="6" md="6">
-              <img src={donutImg} alt="testimonial-img" style={{height: "400px", width: "400px"}} />
+                <img src={donutImg} alt="testimonial-img" style={{ height: "400px", width: "400px" }} />
               </Col>
               <Col lg="6" md="6" className="text-center">
 
-                  <h2 className="testimonial__title mb-4">
-                    Do you have problems or suggestions for website?
-                  </h2>
-                  <p className="testimonial__desc">
-                    We need your opinions to help us improve our website day by day.
-                  </p>
-                  <span className="input__contact">
-                  <input type="text" placeholder="Your email"/>
+                <h2 className="testimonial__title mb-4">
+                  Do you have problems or suggestions for website?
+                </h2>
+                <p className="testimonial__desc">
+                  We need your opinions to help us improve our website day by day.
+                </p>
+                <span className="input__contact">
+                  <input type="text" placeholder="Your email" />
                   <div>
-                    <input type="text" placeholder="Your opinions"/>
+                    <input type="text" placeholder="Your opinions" />
                   </div>
-                  </span>
-                  <div className="button__contact">
-                    <button>Get</button>
-                  </div>
+                </span>
+                <div className="button__contact">
+                  <button>Get</button>
+                </div>
               </Col>
-              
+
             </Row>
           </Container>
-      
+
         </div>
       </section>
     </Helmet>

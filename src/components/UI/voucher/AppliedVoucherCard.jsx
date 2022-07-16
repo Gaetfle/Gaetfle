@@ -47,12 +47,6 @@ const VoucherCard = (props) => {
 
             <div className="kanan ">
                 <div className="info  align-items-center ">
-                    <div className="w-64 p-3 mt-2">
-                    <label className="btn__container">
-                        <input type="radio" name="radio" defaultValue={props.id} onClick={optionHandler}/>
-                        <span class="checkmark"></span>
-                    </label>
-                    </div>
                     <div class="w-64 mt-4">
                         <a 
                             target="_blank" 

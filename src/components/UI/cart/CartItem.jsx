@@ -45,7 +45,7 @@ const CartItem = ({ item }) => {
             <h5 className="cart__product-title">{title}</h5>
             <h5>{category}</h5>
             <p className=" d-flex align-items-center gap-5 cart__product-price">
-              <span>{price} VNĐ</span> 
+              <span>{price.toLocaleString("en-US")} VNĐ</span> 
               <div className=" d-flex align-items-center justify-content-between increase__decrease-btn" style={{width: "70px", marginLeft: "-15px", marginRight: "-15px"}}>
                 <span className="increase__btn" onClick={incrementItem}>
                 <MdAdd/>
@@ -55,7 +55,7 @@ const CartItem = ({ item }) => {
                   <GrFormSubtract/>
                 </span>
               </div> 
-            <span>{totalPrice} VNĐ</span>
+            <span>{totalPrice.toLocaleString("en-US")} VNĐ</span>
             </p>
             
           </div>

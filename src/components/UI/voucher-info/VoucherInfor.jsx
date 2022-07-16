@@ -34,7 +34,7 @@ const VoucherInfo = () => {
           {coupon.map((item) => (
               <div key={item.id} className="mb-4">
                 {console.log(item)}
-                <ApplyVoucherCard title={item.title} image={item.image} desc={item.desc} date={item.date} />
+                <ApplyVoucherCard id={item.id} title={item.title} image={item.image} desc={item.desc} date={item.date} />
               </div>
           ))}
         </div>

@@ -17,6 +17,7 @@ import VoucherInfo from "../components/UI/voucher-info/VoucherInfor";
 import { inforUiActions } from "../store/shipping-infor/inforUiSlice";
 import { paymentUiActions } from "../store/payment/paymentUiSlice";
 import { voucherUiActions } from "../store/voucher/voucherUiSlice";
+import voucher_01 from "../assets/images/voucher/voucher1.png";
 
 const Checkout = () => {
   // const shippingInfo = [];
@@ -47,6 +48,7 @@ const Checkout = () => {
   const phone = useSelector((state) => state.order.phone);
   const address = useSelector((state) => state.order.address);
   const gmail = useSelector((state) => state.order.gmail);
+  const voucherOption = useSelector((state) => state.voucherUi.option);
 
   const method = useSelector((state) => state.payment.method);
   const cardNumber = useSelector((state) => state.payment.cardNumber);
@@ -132,7 +134,14 @@ const Checkout = () => {
                   </span>
                   <h4 style={{marginBottom: "15px"}}>Applied Vouchers</h4>
                   <div className="voucher__area">
-                      <span style={{marginLeft: "320px"}}><BsFillArrowRightCircleFill style={{marginTop: "-8px", cursor: "pointer"}} onClick={toggleVoucher}/></span>
+                  <div className="voucher__item">
+                      <h6>
+                        {/* {voucherOption} */}
+                      </h6>
+                    </div>
+                      <span style={{marginLeft: "320px"}}>
+                        <BsFillArrowRightCircleFill style={{marginTop: "-40px", cursor: "pointer", position: "static"}} onClick={toggleVoucher}/>
+                      </span>
                       { showVoucher && <VoucherInfo/>}
                   </div>
                   
@@ -145,14 +154,14 @@ const Checkout = () => {
                   <h4>Payment Details</h4>
                 </div>
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{paddingTop: "25px", borderTop: "1px solid #fff"}}>
-                  Subtotal: <span>{cartTotalAmount} VND</span>
+                  Subtotal: <span>{cartTotalAmount.toLocaleString("en-US")} VND</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Shipping: <span>{shippingCost} VND</span>
+                  Shipping: <span>{shippingCost.toLocaleString("en-US")} VND</span>
                 </h6>
                 <div className="checkout__total">
                   <h5 className="d-flex align-items-center justify-content-between">
-                    Total: <span>{totalPayment} VND</span>
+                    Total: <span>{totalPayment.toLocaleString("en-US")} VND</span>
                   </h5>
                 </div>
                 <div className="order__button">

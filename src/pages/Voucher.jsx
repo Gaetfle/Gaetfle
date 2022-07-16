@@ -86,7 +86,7 @@ const Voucher = () => {
             ))}
 
             <Col lg="12" className="text-center">
-            <div style={{marginTop: "60px", marginBottom: "40px"}}><h2>Freeship</h2></div>
+            <div style={{marginTop: "10px", marginBottom: "40px"}}><h2>Freeship</h2></div>
             </Col>
             {freeship.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">

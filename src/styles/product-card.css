@@ -1,6 +1,6 @@
 .product__item {
   border: none;
-  background-color: #ebc7af;
+  background-color: #ebbea1;
   /* padding: 10px; */
   border-radius: 10px ;
   cursor: pointer;
@@ -33,28 +33,28 @@
 
 .product__price {
   font-weight: 800;
-  font-size: 1rem;
-  color: #545F77;
+  font-size: 0.9rem;
+  color: #626546;
 }
 
-.addToCart__btn {
+/* .addToCart__btn {
   border: none;
   padding: 7px 25px;
   background: #626546;
   color: #FCF9F3;
   border-radius: 5px;
   font-size: 0.9rem;
-}
+} */
 
 .cart_button {
-  height: 55px;
+  height: 40px;
   width: 55px;
-  background-color: white;
-  padding: 20px 0px;
+  background-color: #c98557;
+  padding-top: 10px;
   margin-bottom: 5px;
-  margin-left: 251px;
+  margin-left: 90px;
   text-align: center;
-  border-radius: 0px 10px 0px 10px;
+  border-radius: 10px;
 
 }
 

@@ -16,7 +16,7 @@ const store = configureStore({
     order: orderInformationSlice.reducer,
     payment: paymentInformationSlice.reducer,
     paymentUi: paymentUiSlice.reducer,
-    voucherUi: voucherUiSlice.reducer
+    voucherUi: voucherUiSlice.reducer,
   },
 });
 
