@@ -1,16 +1,16 @@
 import React, { useRef, useEffect } from "react";
-import {FiSearch} from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {GrCart} from "react-icons/gr";
+import { GrCart } from "react-icons/gr";
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 import "../../styles/header.css";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import {FiLogOut, FiLogIn} from 'react-icons/fi';
+import { FiLogOut, FiLogIn } from 'react-icons/fi';
 
 const nav__links = [
   {
@@ -47,7 +47,7 @@ const Header = () => {
     if (Cookies.get("user")) { setIsLogin(true) }
   })
   useEffect(() => {
-    
+
 
     window.addEventListener("scroll", () => {
       if (
@@ -64,12 +64,12 @@ const Header = () => {
   }, []);
 
   const loginHandler = () => {
-    if(Cookies.get("user")){
+    if (Cookies.get("user")) {
       Cookies.remove("user");
       setIsLogin(false)
       navigate("/");
     }
-    else{
+    else {
       navigate("/login");
     }
   }
@@ -78,25 +78,26 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex justify-content-end">
-          <div className="logo">
-            <img src={logo} alt="logo"/>
-          </div>
-
+          <Link to={`/home`}>
+            <div className="logo">
+              <img src={logo} alt="logo" />
+            </div>
+          </Link>
           {/* ======= search ======= */}
           <div className="search-box">
-            <input 
-                  type="text" 
-                  placeholder="Search"
-                  style={{ 
-                    height: "20px",
-                    width: "320px",
-                    borderRadius: "20px",
-                    padding: "20px",
-                    backgroundColor: "#FCF9F3"
-                  }}
+            <input
+              type="text"
+              placeholder="Search"
+              style={{
+                height: "20px",
+                width: "320px",
+                borderRadius: "20px",
+                padding: "20px",
+                backgroundColor: "#FCF9F3"
+              }}
             />
             <div className="btn">
-              <FiSearch/>
+              <FiSearch />
             </div>
           </div>
 
@@ -119,10 +120,12 @@ const Header = () => {
           </div>
 
           {/* ======== nav right icons ========= */}
-          <div className="nav__right d-flex align-items-center gap-5">
-          
+          <div className="nav__right d-flex align-items-center gap-5" style={{
+            zIndex: '3',
+          }}>
+
             <span className="user">
-              <i className="ri-user-line"/>
+              <i className="ri-user-line" />
               {/* <input 
                 type="checkbox" 
                 id="btn" 
@@ -134,13 +137,13 @@ const Header = () => {
                 }}/> */}
               <ul className="sub-login">
                 <li><a href="/">Profile</a></li>
-                <li onClick={loginHandler}>{isLogin && <div><FiLogOut/><span>Logout</span></div>}
-                    {!isLogin && <div><FiLogIn/><span>Login</span></div>}
+                <li onClick={loginHandler}>{isLogin && <div><FiLogOut /><span>Logout</span></div>}
+                  {!isLogin && <div><FiLogIn /><span>Login</span></div>}
                 </li>
               </ul>
             </span>
             <span className="cart__icon" onClick={toggleCart}>
-              <GrCart/>
+              <GrCart />
               <span className="cart__badge">{totalQuantity}</span>
             </span>
 
