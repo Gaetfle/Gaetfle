@@ -49,8 +49,8 @@ const ShippingInfo = () => {
     <div className="shipping__container">
       <div className="shipping-info">
             <div className="shipping-info__container">
-                <div className="shipping__close" onClick={toggleInfor} style={{cursor: "pointer"}}>
-                    <AiFillCloseCircle/>
+                <div className="shipping__close"  style={{cursor: "pointer"}} onClick={toggleInfor}>
+                  <AiFillCloseCircle/> 
                 </div>
                 <div className="shipping-info__title">
                     <h3>Shipping Info</h3>

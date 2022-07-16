@@ -43,8 +43,8 @@ const PaymentInfo = () => {
     <div className="payment__container">
       <div className="payment-info">
             <div className="payment-info__container">
-                <div className="payment__close" onClick={togglePayment} style={{cursor: "pointer"}}>
-                    <AiFillCloseCircle/>
+                <div className="payment__close" style={{cursor: "pointer"}} onClick={togglePayment}>
+                  <AiFillCloseCircle/> 
                 </div>
                 <div className="payment-info__title">
                     <h3>Payment Infor</h3>
