@@ -30,7 +30,7 @@ import product_06_image_03 from "../images/flangato.jpg";
 const products = [
   {
     id: "01",
-    title: "Hoa hồng",
+    title: "Rose",
     price: 450000,
     image01: product_01_image_01,
     image02: product_01_image_02,
@@ -44,7 +44,7 @@ const products = [
 
   {
     id: "02",
-    title: "Hoa baby",
+    title: "Baby",
     price: 150000,
     image01: product_02_image_01,
     image02: product_02_image_02,
@@ -58,7 +58,7 @@ const products = [
 
   {
     id: "03",
-    title: "Hoa cát tường",
+    title: "Auspicious",
     price: 200000,
     image01: product_03_image_01,
     image02: product_03_image_02,
@@ -72,7 +72,7 @@ const products = [
 
   {
     id: "04",
-    title: "Hoa cẩm chướng",
+    title: "Carnation",
     price: 350000,
     image01: product_04_image_01,
     image02: product_04_image_02,
@@ -86,7 +86,7 @@ const products = [
 
   {
     id: "05",
-    title: "Hoa cúc",
+    title: "Chrysanthemum",
     price: 50000,
     image01: product_05_image_01,
     image02: product_05_image_02,
@@ -99,7 +99,7 @@ const products = [
   },
   {
     id: "06",
-    title: "Hoa tuplip",
+    title: "Tuplip",
     price: 900000,
     image01: product_02_image_04,
     image02: product_01_image_02,
@@ -113,7 +113,7 @@ const products = [
 
   {
     id: "07",
-    title: "Hoa hướng dương",
+    title: "Sunflower",
     price: 300000,
     image01: product_02_image_02,
     image02: product_02_image_01,
@@ -127,7 +127,7 @@ const products = [
 
   {
     id: "08",
-    title: "Hoa mẫu đơn",
+    title: "Peony",
     price: 850000,
     image01: product_03_image_02,
     image02: product_03_image_01,
@@ -141,7 +141,7 @@ const products = [
 
   {
     id: "09",
-    title: "Hoa cẩm tú cầu",
+    title: "Hydrangea",
     price: 550000,
     image01: product_03_image_04,
     image02: product_03_image_01,
@@ -155,7 +155,7 @@ const products = [
 
   {
     id: "10",
-    title: "Hoa salem",
+    title: "Salem",
     price: 500000,
     image01: product_04_image_04,
     image02: product_03_image_01,
@@ -169,7 +169,7 @@ const products = [
 
   {
     id: "11",
-    title: "Hoa phi yến",
+    title: "Delphiniums",
     price: 750000,
     image01: product_01_image_04,
     image02: product_03_image_01,
@@ -183,7 +183,7 @@ const products = [
 
   {
     id: "12",
-    title: "Hoa mẫu đơn",
+    title: "Peony",
     price: 550000,
     image01: product_03_image_02,
     image02: product_03_image_01,
@@ -197,7 +197,7 @@ const products = [
 
   {
     id: "13",
-    title: "Set mouse vuông",
+    title: "Set Mouse Square",
     price: 550000,
     image01: product_01_image_02,
     image02: product_04_image_01,
@@ -224,7 +224,7 @@ const products = [
 
   {
     id: "15",
-    title: "Mouse chanh dây ",
+    title: "Passion Mouse",
     price: 500000,
     image01: product_05_image_02,
     image02: product_06_image_02,
@@ -238,7 +238,7 @@ const products = [
 
   {
     id: "16",
-    title: "Redvelvet socola",
+    title: "Chocolate Redvelvet",
     price: 700000,
     image01: product_05_image_03,
     image02: product_06_image_01,
@@ -252,7 +252,7 @@ const products = [
 
   {
     id: "17",
-    title: "Set socola",
+    title: "Set chocolate",
     price: 200000,
     image01: product_06_image_01,
     image02: product_06_image_02,
@@ -266,7 +266,7 @@ const products = [
 
   {
     id: "18",
-    title: "Tiramisu socola",
+    title: "Chocolate tiramisu",
     price: 500000,
     image01: product_06_image_02,
     image02: product_06_image_02,
@@ -282,7 +282,7 @@ const products = [
     id: "19",
     title: "Flan gato",
     price: 300000,
-    image01: product_06_image_03,
+    image01: product_06_image_02,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Cake",
@@ -294,9 +294,9 @@ const products = [
 
   {
     id: "20",
-    title: "Loaf Bread ",
+    title: "Loaf of Bread ",
     price: 35.0,
-    image01: product_06_image_03,
+    image01: product_06_image_01,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Cake",

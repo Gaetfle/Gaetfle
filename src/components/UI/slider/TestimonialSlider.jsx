@@ -12,7 +12,7 @@ const TestimonialSlider = () => {
     autoplay: true,
     infinite: true,
     speed: 1000,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     swipeToSlide: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -20,15 +20,15 @@ const TestimonialSlider = () => {
   return (
     <Slider {...settings}>
       <div className=" slider__content d-flex align-items-center gap-3 ">
-        <img src={homeBanner} alt="bannerHome-img"/>
+        <img src={homeBanner} alt="bannerHome-img" />
       </div>
 
       <div className=" slider__content d-flex align-items-center gap-3 ">
-        <img src={banner1} alt="bannerHome-img2"/>
+        <img src={banner1} alt="bannerHome-img2" />
       </div>
 
       <div className=" slider__content d-flex align-items-center gap-3 ">
-        <img src={banner2} alt="bannerHome-img3"/>
+        <img src={banner2} alt="bannerHome-img3" />
       </div>
 
       {/* <div>
