@@ -1,0 +1,44 @@
+body {
+    background: #dedede;
+}
+
+.coupon{
+    margin-right: 40px;
+}
+
+.coupon .kanan-container {
+    border-left: 1px dashed #ddd;
+    position: relative;
+}
+
+.coupon .kanan-container .info-coupon::after,
+.coupon .kanan-container .info-coupon::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* background: red; */
+    border-radius: 100%;
+}
+
+.coupon .kanan-container .info-coupon::before {
+    top: -10px;
+    left: -10px;
+}
+
+.coupon .kanan-container .info-coupon::after {
+    bottom: -10px;
+    left: -10px;
+}
+
+.coupon .time {
+    font-size: 1.6rem;
+}
+
+.choosedCoupon{
+    margin-right: 40px;
+    height: 80%;
+    width: 94%;
+    margin-left: 10px;
+    margin-top: 10px;
+}

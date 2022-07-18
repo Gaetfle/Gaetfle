@@ -35,6 +35,14 @@ body {
     font-size: 1.6rem;
 }
 
+.choosedCoupon{
+    margin-right: 40px;
+    height: 80%;
+    width: 94%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
 .btn__container {
     display: block;
     position: relative;

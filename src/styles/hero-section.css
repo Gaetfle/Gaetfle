@@ -34,8 +34,8 @@
 
 .order__btn:hover {
   background: #999B84;
-  transform: translateY(5px);
-  translate: 0.5s;
+  transform: scale(1.2) translateY(5px);
+  transition: 0.5s;
 }
 
 .all__foods-btn {
@@ -46,8 +46,8 @@
 .all__foods-btn:hover {
   background: transparent;
   border: 1px solid #626546 !important;
-  transform: translateY(5px);
-  translate: 0.5s;
+  transform: scale(1.2) translateY(5px);
+  transition: 0.5s;
 }
 
 .all__foods-btn a {

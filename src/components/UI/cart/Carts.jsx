@@ -2,10 +2,8 @@ import React from "react";
 import { ListGroup } from "reactstrap";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-
 import { useDispatch, useSelector } from "react-redux";
 import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
-
 import "../../../styles/shopping-cart.css";
 
 const Carts = () => {
@@ -23,7 +21,7 @@ const Carts = () => {
           <span onClick={toggleCart}>
             <i className="ri-close-fill"></i>
           </span>
-          <span style={{marginLeft: "-400px"}}>
+          <span style={{marginLeft: "-450px"}}>
             <h5>Cart</h5>
           </span>
         </div>

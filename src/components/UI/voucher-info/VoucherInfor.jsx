@@ -37,6 +37,11 @@ const VoucherInfo = () => {
                 <ApplyVoucherCard id={item.id} title={item.title} image={item.image} desc={item.desc} date={item.date} />
               </div>
           ))}
+          {freeshipCard.map((item) => (
+            <div key={item.id} className="mb-4">
+              <FreeshipCard id={item.id} title={item.title} image={item.image} desc={item.desc} date={item.date} />
+            </div>
+          ))}
         </div>
         <div className="voucher__bottom d-flex align-items-center justify-content-between">
           <button onClick={toggleInfor}>

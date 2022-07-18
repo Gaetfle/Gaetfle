@@ -17,7 +17,8 @@ import VoucherInfo from "../components/UI/voucher-info/VoucherInfor";
 import { inforUiActions } from "../store/shipping-infor/inforUiSlice";
 import { paymentUiActions } from "../store/payment/paymentUiSlice";
 import { voucherUiActions } from "../store/voucher/voucherUiSlice";
-import voucher_01 from "../assets/images/voucher/voucher1.png";
+// import voucher_01 from "../assets/images/voucher/voucher1.png";
+import ChoosedVoucherCard from "../components/UI/voucher/ChoosedVoucher";
 
 const Checkout = () => {
   // const shippingInfo = [];
@@ -43,13 +44,13 @@ const Checkout = () => {
   const toggleVoucher= () => {
     dispatch(voucherUiActions.toggle());
   };
-
+  const [choosedVoucher, setChoosedVoucher] = useState(null);
   const name = useSelector((state) => state.order.name);
   const phone = useSelector((state) => state.order.phone);
   const address = useSelector((state) => state.order.address);
   const gmail = useSelector((state) => state.order.gmail);
-  const voucherOption = useSelector((state) => state.voucherUi.option);
-
+  const voucherTitle = useSelector((state) => state.voucherUi.title);
+  const voucherImg = useSelector((state) => state.voucherUi.title);
   const method = useSelector((state) => state.payment.method);
   const cardNumber = useSelector((state) => state.payment.cardNumber);
 
@@ -101,7 +102,7 @@ const Checkout = () => {
                 </h6>
 
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{color: "#999B84"}}>
-                  Mặc định 
+                  Mặc định
                   <span 
                     style={{color: "white", cursor: "pointer"}} 
                     onClick={toggleInfor}
@@ -134,13 +135,11 @@ const Checkout = () => {
                   </span>
                   <h4 style={{marginBottom: "15px"}}>Applied Vouchers</h4>
                   <div className="voucher__area">
+                    {voucherTitle && <ChoosedVoucherCard title={voucherTitle}/>}
                   <div className="voucher__item">
-                      <h6>
-                        {/* {voucherOption} */}
-                      </h6>
                     </div>
                       <span style={{marginLeft: "320px"}}>
-                        <BsFillArrowRightCircleFill style={{marginTop: "-40px", cursor: "pointer", position: "static"}} onClick={toggleVoucher}/>
+                        <BsFillArrowRightCircleFill style={{cursor: "pointer", position: "static"}} onClick={toggleVoucher}/>
                       </span>
                       { showVoucher && <VoucherInfo/>}
                   </div>
