@@ -21,7 +21,7 @@ const Carts = () => {
           <span onClick={toggleCart}>
             <i className="ri-close-fill"></i>
           </span>
-          <span style={{marginLeft: "-440px", fontWeight: 800, color: "#626546"}}>
+          <span style={{marginLeft: "-440px", color: "#626546"}}>
             <h5>Cart</h5>
           </span>
         </div>

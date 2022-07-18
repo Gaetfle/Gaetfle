@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import { FiSearch } from 'react-icons/fi';
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
 import { NavLink, Link } from "react-router-dom";
@@ -11,6 +10,8 @@ import "../../styles/header.css";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { FiLogOut, FiLogIn } from 'react-icons/fi';
+import products from "../../assets/fake-data/products.js";
+import Search from "../../components/UI/search/Search";
 
 const nav__links = [
   {
@@ -84,23 +85,8 @@ const Header = () => {
             </div>
           </Link>
           {/* ======= search ======= */}
-          <div className="search-box">
-            <input
-              type="text"
-              placeholder="Search"
-              style={{
-                height: "20px",
-                width: "320px",
-                borderRadius: "20px",
-                padding: "20px",
-                backgroundColor: "#FCF9F3"
-              }}
-            />
-            <div className="btn">
-              <FiSearch />
-            </div>
-          </div>
-
+          <Search placeholder="Seach" data ={products}/>
+          
           {/* ======= menu ======= */}
 
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
