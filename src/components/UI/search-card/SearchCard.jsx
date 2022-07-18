@@ -9,7 +9,8 @@ const SearchCard = ({ item }) => {
       borderRadius: "20px",
       marginBottom: "30px",
       marginLeft: "15px",
-      height: "90px"
+      height: "90px",
+      background: "rgb(249, 239, 218)",
     }}>
       <div className="search_card__item-info d-flex gap-2">
         <img src={image01} 

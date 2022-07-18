@@ -153,14 +153,14 @@ const Checkout = () => {
                   <h4>Payment Details</h4>
                 </div>
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{paddingTop: "25px", borderTop: "1px solid #fff"}}>
-                  Subtotal: <span>{cartTotalAmount.toLocaleString("en-US")} VND</span>
+                  Subtotal: <span>{cartTotalAmount.toLocaleString("en-US")} VNĐ</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Shipping: <span>{shippingCost.toLocaleString("en-US")} VND</span>
+                  Shipping: <span>{shippingCost.toLocaleString("en-US")} VNĐ</span>
                 </h6>
                 <div className="checkout__total">
                   <h5 className="d-flex align-items-center justify-content-between">
-                    Total: <span>{totalPayment.toLocaleString("en-US")} VND</span>
+                    Total: <span>{totalPayment.toLocaleString("en-US")} VNĐ</span>
                   </h5>
                 </div>
                 <div className="order__button">

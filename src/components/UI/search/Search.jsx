@@ -49,12 +49,9 @@ const Search = ({placeholder, data}) => {
         <div className="dataResult">
           {filteredData.slice(0, 10).map((item, index) => {
             return (
-                <Link to={`/products/${item.id}`}>
+                <Link to={`/products/${item.id}`} onClick={clearInput}>
                     <SearchCard item={item} key={index}/>
                 </Link>
-            //   <a className="dataItem" href={value.link} target="_blank">
-            //     <p>{value.title} </p>
-            //   </a>
             );
           })}
         </div>

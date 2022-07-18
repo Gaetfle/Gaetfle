@@ -112,15 +112,6 @@ const Header = () => {
 
             <span className="user">
               <i className="ri-user-line" />
-              {/* <input 
-                type="checkbox" 
-                id="btn" 
-                style={{
-                  position: "fixed", 
-                  marginTop: "45px", 
-                  marginLeft: "-16px",
-                  display: "none"
-                }}/> */}
               <ul className="sub-login">
                 <li><a href="/">Profile</a></li>
                 <li onClick={loginHandler}>{isLogin && <div><FiLogOut /><span>Logout</span></div>}

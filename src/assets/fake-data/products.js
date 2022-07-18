@@ -15,6 +15,9 @@ import product_03_image_03 from "../images/product_3.3.jpg";
 import product_03_image_04 from "../images/product_3.4.jpg";
 
 import product_04_image_01 from "../images/product_4.1.jpg";
+import product_04_image_01_1 from "../images/product_4.1.1.jpg";
+import product_04_image_01_2 from "../images/product_4.1.2.jpg";
+
 import product_04_image_02 from "../images/product_4.2.jpg";
 import product_04_image_03 from "../images/product_4.3.png";
 import product_04_image_04 from "../images/product_4.3.jpg";
@@ -75,8 +78,8 @@ const products = [
     title: "Carnation",
     price: 350000,
     image01: product_04_image_01,
-    image02: product_04_image_02,
-    image03: product_04_image_03,
+    image02: product_04_image_01_1,
+    image03: product_04_image_01_2,
     category: "Flower",
     rating: 4.5,
     type: "best seller",

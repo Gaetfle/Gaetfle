@@ -44,7 +44,7 @@ const ProductCard = (props) => {
         </h5>
 
         <div className=" d-flex align-items-center justify-content-between ">
-          <span className="product__price">{price.toLocaleString("en-US")} VND</span>
+          <span className="product__price">{price.toLocaleString("en-US")} VNĐ</span>
           <div className="cart_button" onClick={addToCart}>
             <GrCart />
           </div>

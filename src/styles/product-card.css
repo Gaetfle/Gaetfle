@@ -37,14 +37,14 @@
   color: #626546;
 }
 
-/* .addToCart__btn {
+.addToCart__btn {
   border: none;
   padding: 7px 25px;
   background: #626546;
   color: #FCF9F3;
   border-radius: 5px;
   font-size: 0.9rem;
-} */
+}
 
 .cart_button {
   height: 40px;

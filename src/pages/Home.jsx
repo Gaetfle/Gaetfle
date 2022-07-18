@@ -86,7 +86,7 @@ const Home = () => {
                   </button>
 
                   <button className="all__foods-btn">
-                    <Link to="/products">How to order?</Link>
+                    <Link to="#">How to order?</Link>
                   </button>
                 </div>
               </div>

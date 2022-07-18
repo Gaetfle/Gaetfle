@@ -38,7 +38,7 @@ const Carts = () => {
 
         <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
-            Subtotal : <span>{totalAmount.toLocaleString("en-US")} VND</span>
+            Subtotal : <span>{totalAmount.toLocaleString("en-US")} VNĐ</span>
           </h6>
           {cartProducts.length === 0 ? (
             <button>
