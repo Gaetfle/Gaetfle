@@ -42,6 +42,7 @@
   height: calc(100vh - 140px);
   overflow-y: scroll;
   margin-bottom: 80px;
+  margin-left: 10px;
 }
 
 .cart__bottom {
