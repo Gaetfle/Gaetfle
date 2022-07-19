@@ -16,7 +16,11 @@
     height: 30px;
     width: 400px;
 }
-  
+
+.IconSearch {
+    display: none;
+}
+
 .searchIcon {
     height: 30px;
     width: 40px;
@@ -75,3 +79,63 @@ a {
 #clearBtn {
     cursor: pointer;
 }
+
+
+@media only screen and (max-width: 1140px) {
+    .search input {
+        height: 20px;
+        width: 200px;
+    }
+    .searchInputs {
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-right: 15px;
+    }
+} 
+
+@media only screen and (max-width: 992px) {
+    .search input {
+        height: 30px;
+        width: 400px;
+    }
+    .searchInputs {
+        margin-top: 32px;
+        margin-left: 55px;
+        margin-right: 90px;
+    }
+      
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .search input {
+        height: 20px;
+        width: 300px;
+    }
+    .searchInputs {
+        margin-top: 30px;
+        display: flex;
+        margin-left: 55px;
+        margin-right: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 456px) {
+    .searchInputs {
+        display: none;
+    }
+    .search input {
+        display: none;
+    }
+    .searchIcon {
+        display: none;
+    }
+}
+
+
+
+
+

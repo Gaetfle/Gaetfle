@@ -86,7 +86,6 @@ const Header = () => {
           </Link>
           {/* ======= search ======= */}
           <Search placeholder="Seach" data ={products}/>
-          
           {/* ======= menu ======= */}
 
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>

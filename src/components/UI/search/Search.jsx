@@ -28,8 +28,16 @@ const Search = ({placeholder, data}) => {
     setSearchTerm("");
   };
 
+  const showSearch = () => {
+    // setFilteredData([]);
+    // setSearchTerm("");
+  };
+
     return (    
     <div className="search">
+      {/* <div className='IconSearch'>
+        <SearchIcon onClick={showSearch}></SearchIcon>
+      </div> */}
       <div className="searchInputs">
         <input
           type="text"
@@ -44,6 +52,9 @@ const Search = ({placeholder, data}) => {
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
         </div>
+    
+    
+    
     </div>
       {filteredData.length != 0 && (
         <div className="dataResult">
