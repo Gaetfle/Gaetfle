@@ -1,9 +1,9 @@
 body {
     background: #dedede;
 }
-.coupon {
-    text-align: center;
-}
+/* .coupon {
+    text-align: center114;
+} */
 
 .coupon .kanan {
     border-left: 1px dashed #ddd;
@@ -34,9 +34,9 @@ body {
     font-size: 1.6rem;
 }
 
-.icon_img {
+/* .icon_img {
     width:50px
-}
+} */
 
 @media only screen and (max-width: 1140px) {
 

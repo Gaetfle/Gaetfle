@@ -17,7 +17,6 @@ const VoucherCard = (props) => {
         dispatch(voucherUiActions.setOption(event.target.value))
        
     }
-
     useEffect(() => {
         if (disableSave === true) {
             setTextSave("SAVED")
