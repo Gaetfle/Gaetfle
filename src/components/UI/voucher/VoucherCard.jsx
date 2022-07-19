@@ -23,7 +23,7 @@ const VoucherCard = (props) => {
             <div className="kiri p-3 mt-2">
                 <div className="icon-container ">
                     <div className="icon-container_box" >
-                        <img src={props.image} width="50" alt="voucher" />
+                        <img className="icon_img" src={props.image}  alt="voucher" />
                     </div>
                 </div>
             </div>
