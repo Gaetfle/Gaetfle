@@ -28,7 +28,6 @@ const ProductCard = (props) => {
   return (
 
     <div className="product__item">
-
       <div>
         <Link to={`/products/${id}`}>
           <div className="product__img">
@@ -40,7 +39,7 @@ const ProductCard = (props) => {
       <div className="product__content">
         <h5 className="d-flex justify-content-between">
           <Link to={`/products/${id}`}>{title}</Link>
-          <Rating name="half-rating-read" defaultValue={rating} style={{color: "#fdff30"}} precision={0.5} readOnly />
+          <Rating name="half-rating-read" defaultValue={rating} style={{color: "#E87C08"}} precision={0.5} readOnly />
         </h5>
 
         <div className=" d-flex align-items-center justify-content-between ">

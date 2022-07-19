@@ -5,6 +5,8 @@ import "../../../styles/shipping-info.css";
 import { useSelector, useDispatch } from "react-redux";
 import { orderInformationActions } from "../../../store/orderInformation/orderInformationSlice";
 import { useState } from "react";
+import informationImg from "../../../assets/images/information.png";
+
 const ShippingInfo = () => {
 
   const currentName = useSelector((state) => state.order.name);
@@ -48,22 +50,25 @@ const ShippingInfo = () => {
   return (
     <div className="shipping__container">
       <div className="shipping-info">
-            <div className="shipping-info__container">
-                <div className="shipping__close"  style={{cursor: "pointer"}} onClick={toggleInfor}>
-                  <AiFillCloseCircle/> 
-                </div>
-                <div className="shipping-info__title">
-                    <h3>Shipping Info</h3>
-                </div>
-                <div className="shipping-info__content">
-                    <input type="text" placeholder='Enter your name' onChange={getName} defaultValue={currentName}/>
-                    <input type="text" placeholder='Enter your numberphone' onChange={getPhone} defaultValue={currentPhone}/>
-                    <input type="text" placeholder='Enter your address' onChange={getAddress} defaultValue={currentAddress}/>
-                    <input type="email" placeholder='Enter your email' onChange={getEmail} defaultValue={currentGmail}/>
-                    <button onClick={toggleInfor}>OK</button>
-                </div>    
-            </div>            
+        <div className="shipping__img">
+          <img src={informationImg} alt="information-img" />
         </div>
+        <div className="shipping-info__container">
+          <div className="shipping__close"  style={{cursor: "pointer"}} onClick={toggleInfor}>
+            <AiFillCloseCircle/> 
+          </div>
+          <div className="shipping-info__title">
+            <h3>Shipping Info</h3>
+          </div>
+          <div className="shipping-info__content">
+            <input type="text" placeholder='Enter your name' onChange={getName} defaultValue={currentName}/>
+            <input type="text" placeholder='Enter your numberphone' onChange={getPhone} defaultValue={currentPhone}/>
+            <input type="text" placeholder='Enter your address' onChange={getAddress} defaultValue={currentAddress}/>
+            <input type="email" placeholder='Enter your email' onChange={getEmail} defaultValue={currentGmail}/>
+            <button onClick={toggleInfor}>OK</button>
+          </div>   
+        </div>            
+     </div>
     </div>
   );
 };

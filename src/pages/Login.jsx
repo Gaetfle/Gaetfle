@@ -5,7 +5,6 @@ import { Link,  useNavigate } from "react-router-dom";
 import loginImg from "../assets/images/login.png";
 import "../styles/login.css";
 import Cookies from 'js-cookie';
-// import user from "../assets/fake-data/user";
 import users from "../assets/fake-data/user";
 const Login = () => {
 
@@ -14,10 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
-    // if (email === user.email && password === user.password) {
-    //   Cookies.set('user', user);
-    //   window.location.href = "/home";
-    // }
     for(let i = 0; i < users.length; i++) {
       if(email === users[i].email && password === users[i].password) {
         Cookies.set('user', users[i].username);

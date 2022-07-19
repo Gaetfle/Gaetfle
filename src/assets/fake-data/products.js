@@ -18,17 +18,24 @@ import product_04_image_01 from "../images/product_4.1.jpg";
 import product_04_image_01_1 from "../images/product_4.1.1.jpg";
 import product_04_image_01_2 from "../images/product_4.1.2.jpg";
 
-import product_04_image_02 from "../images/product_4.2.jpg";
+// import product_04_image_02 from "../images/product_4.2.jpg";
 import product_04_image_03 from "../images/product_4.3.png";
 import product_04_image_04 from "../images/product_4.3.jpg";
 
-import product_05_image_01 from "../images/product_04.jpg";
 import product_05_image_02 from "../images/product_08.jpg";
+import product_05_image_02_1 from "../images/product_08.1.jpg";
+import product_05_image_02_2 from "../images/product_08.2.jpg";
+
+import product_05_image_01 from "../images/product_04.jpg";
 import product_05_image_03 from "../images/product_09.jpg";
 
 import product_06_image_01 from "../images/socola.jpg";
 import product_06_image_02 from "../images/tiramisu.jpg";
 import product_06_image_03 from "../images/flangato.jpg";
+
+import product_07_image_01 from "../images/product_9.jpg";
+import product_07_image_02 from "../images/product_9.1.jpg";
+import product_07_image_03 from "../images/product_9.2.jpg";
 
 const products = [
   {
@@ -90,7 +97,7 @@ const products = [
   {
     id: "05",
     title: "Chrysanthemum",
-    price: 50000,
+    price: 100000,
     image01: product_05_image_01,
     image02: product_05_image_02,
     image03: product_05_image_03,
@@ -230,8 +237,8 @@ const products = [
     title: "Passion Mouse",
     price: 500000,
     image01: product_05_image_02,
-    image02: product_06_image_02,
-    image03: product_06_image_03,
+    image02: product_05_image_02_1,
+    image03: product_05_image_02_2,
     category: "Cake",
     rating: 5.0,
     type: "best seller",
@@ -285,7 +292,7 @@ const products = [
     id: "19",
     title: "Flan gato",
     price: 300000,
-    image01: product_06_image_02,
+    image01: product_06_image_03,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Cake",
@@ -297,11 +304,11 @@ const products = [
 
   {
     id: "20",
-    title: "Loaf of Bread ",
-    price: 35.0,
-    image01: product_06_image_01,
-    image02: product_06_image_02,
-    image03: product_06_image_03,
+    title: "Almond Cookie",
+    price: 200000,
+    image01: product_07_image_02,
+    image02: product_07_image_03,
+    image03: product_07_image_01,
     category: "Cake",
     rating: 5.0,
     type: "best seller",

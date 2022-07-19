@@ -10,7 +10,7 @@ import featureImg03 from "../assets/images/Deliveryfaster.png";
 import products from "../assets/fake-data/products.js";
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 import donutImg from "../assets/images/donut.png";
-import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
+import TestimonialSlider from "../components/UI/slider/BannerSlider.jsx";
 import Cookies from 'js-cookie';
 
 const featureData = [
@@ -55,8 +55,6 @@ const Home = () => {
     setGift83(filteredGift83);
     setBestseller(filteredBestseller);
     setNewProduct(filteredNew);
-    // const slicePizza = filteredPizza.slice(0, 4);
-    // setHotPizza(slicePizza);
   }, []);
 
   let messagebtn = "Login";
@@ -71,7 +69,6 @@ const Home = () => {
           <Row>
             <Col lg="4" md="4">
               <div className="hero__content  ">
-                {/* <h5 className="mb-3">Easy way to make an order</h5> */}
                 <h1 className="mb-3 hero__title">
                   <span>CHERISH</span><br />sweet momments
                 </h1>

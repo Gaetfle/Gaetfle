@@ -8,21 +8,26 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import "../styles/product-details.css";
 import ProductCard from "../components/UI/product-card/ProductCard";
+import Rating from '@mui/material/Rating';
+import IconButton from '@mui/material/IconButton';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const ProductDetails = () => {
   const [tab, setTab] = useState("desc");
   const [enteredName, setEnteredName] = useState("");
   const [enteredEmail, setEnteredEmail] = useState("");
   const [reviewMsg, setReviewMsg] = useState("");
+  const [value, setValue] = useState(0);
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const product = products.find((product) => product.id === id);
   const [previewImg, setPreviewImg] = useState(product.image01);
-  const { title, price, category, desc, image01 } = product;
+  const { title, price, category, desc, image01, rating } = product;
 
-  const relatedProduct = products.filter((item) => category === item.category);
-
+  const relatedProduct = products.filter((item) => category === item.category && item.id !== id);
+  //get 4 products of the same category randomly but not the same product
+  const relatedProduct2 = relatedProduct.sort(() => Math.random() - 0.5).slice(0, 4);
   const addItem = () => {
     dispatch(
       cartActions.addItem({
@@ -87,15 +92,21 @@ const ProductDetails = () => {
 
             <Col lg="6" md="6">
               <div className="single__product-content">
-                <h2 className="product__title mb-3">{title}</h2>
-                <p className="product__price">
-                  {" "}
-                  Price: <span>{price.toLocaleString("en-US")} VNĐ</span>
-                </p>
-                <p className="category mb-5">
+                <h2 className="product__title mb-3">{title}
+                <IconButton aria-label="add to favorites" style={{marginLeft: "25px", marginTop: "-3px"}}>
+                  <FavoriteIcon />
+                </IconButton>
+                </h2>
+                <p className="category mb-3">
                   Category: <span>{category}</span>
                 </p>
-
+                <p className="product__price mb-3">
+                  Price: <span style={{fontSize: "20px"}}>{price.toLocaleString("en-US")} VNĐ</span>
+                </p>
+                <p className="rating mb-4">
+                  <Rating name="half-rating-read" defaultValue={rating} style={{color: "#E87C08"}} precision={0.5} readOnly />
+                </p>
+                
                 <button onClick={addItem} className="addToCart__btn">
                   Add to Cart
                 </button>
@@ -103,7 +114,7 @@ const ProductDetails = () => {
             </Col>
 
             <Col lg="12">
-              <div className="tabs d-flex align-items-center gap-5 py-3">
+              <div className="tabs d-flex align-items-center gap-5 py-3 mt-5">
                 <h6
                   className={` ${tab === "desc" ? "tab__active" : ""}`}
                   onClick={() => setTab("desc")}
@@ -114,7 +125,7 @@ const ProductDetails = () => {
                   className={` ${tab === "rev" ? "tab__active" : ""}`}
                   onClick={() => setTab("rev")}
                 >
-                  Review
+                  Comments
                 </h6>
               </div>
 
@@ -127,18 +138,21 @@ const ProductDetails = () => {
                   <div className="review pt-5">
                     <p className="user__name mb-0">Jhon Doe</p>
                     <p className="user__email">jhon1@gmail.com</p>
+                    <Rating name="half-rating-read" defaultValue={rating} style={{color: "#E87C08"}} precision={0.5} readOnly />
                     <p className="feedback__text">great product</p>
                   </div>
 
                   <div className="review">
                     <p className="user__name mb-0">Jhon Doe</p>
                     <p className="user__email">jhon1@gmail.com</p>
+                    <Rating name="half-rating-read" defaultValue={rating} style={{color: "#E87C08"}} precision={0.5} readOnly />
                     <p className="feedback__text">great product</p>
                   </div>
 
                   <div className="review">
                     <p className="user__name mb-0">Jhon Doe</p>
                     <p className="user__email">jhon1@gmail.com</p>
+                    <Rating name="half-rating-read" defaultValue={rating} style={{color: "#E87C08"}} precision={0.5} readOnly />
                     <p className="feedback__text">great product</p>
                   </div>
                   <form className="form" onSubmit={submitHandler}>
@@ -161,6 +175,18 @@ const ProductDetails = () => {
                     </div>
 
                     <div className="form__group">
+                      <Rating
+                        name="half-rating"
+                        value={value}
+                        precision={0.5}
+                        onChange={(event, newValue) => {
+                          setValue(newValue);
+                        }}
+                        
+                      />
+                    </div>
+
+                    <div className="form__group">
                       <textarea
                         rows={5}
                         type="text"
@@ -170,7 +196,7 @@ const ProductDetails = () => {
                       />
                     </div>
 
-                    <button type="submit" className="addTOCart__btn">
+                    <button type="submit" className="addToCart__btn">
                       Submit
                     </button>
                   </form>
@@ -182,7 +208,7 @@ const ProductDetails = () => {
               <h2 className="related__Product-title">You might also like</h2>
             </Col>
 
-            {relatedProduct.map((item) => (
+            {relatedProduct2.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
                 <ProductCard item={item} />
               </Col>

@@ -15,18 +15,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 const Products = () => {
   Cookies.set('user', 'admin')
   console.log(Cookies.get('user'));
-  // const [searchTerm, setSearchTerm] = useState("");
-
-  // const searchedProduct = products.filter((item) => {
-  //   if (searchTerm.value === "") {
-  //     return item;
-  //   }
-  //   if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-  //     return item;
-  //   } else {
-  //     return console.log("not found");
-  //   }
-  // });
+  
   const [category, setCategory] = useState('ALL');
   const [allProducts, setAllProducts] = useState(products);
   const [showedProducts, setShowedProducts] = useState(allProducts.slice(0, 8));
@@ -35,11 +24,11 @@ const Products = () => {
 
   const [hotPizza, setHotPizza] = useState([]);
 
-  useEffect(() => {
-    const filteredPizza = products.filter((item) => item.category === 'Flower');
-    // const slicePizza = filteredPizza.slice(0, 4);
-    // setHotPizza(slicePizza);
-  }, []);
+  // useEffect(() => {
+  //   const filteredPizza = products.filter((item) => item.category === 'Flower');
+  //   // const slicePizza = filteredPizza.slice(0, 4);
+  //   // setHotPizza(slicePizza);
+  // }, []);
 
   useEffect(()=>{
     if(allProducts.length > 8) {

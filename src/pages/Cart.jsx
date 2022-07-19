@@ -17,13 +17,10 @@ import VoucherInfo from "../components/UI/voucher-info/VoucherInfor";
 import { inforUiActions } from "../store/shipping-infor/inforUiSlice";
 import { paymentUiActions } from "../store/payment/paymentUiSlice";
 import { voucherUiActions } from "../store/voucher/voucherUiSlice";
-// import voucher_01 from "../assets/images/voucher/voucher1.png";
 import ChoosedVoucherCard from "../components/UI/voucher/ChoosedVoucher";
 
 const Checkout = () => {
-  // const shippingInfo = [];
-  // const totalAmount = useSelector((state) => state.cart.totalAmount);
-  // const cartProducts = useSelector((state) => state.cart.cartItems);
+
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const shippingCost = 30;
@@ -50,7 +47,7 @@ const Checkout = () => {
   const address = useSelector((state) => state.order.address);
   const gmail = useSelector((state) => state.order.gmail);
   const voucherTitle = useSelector((state) => state.voucherUi.title);
-  const voucherImg = useSelector((state) => state.voucherUi.title);
+  // const voucherImg = useSelector((state) => state.voucherUi.title);
   const method = useSelector((state) => state.payment.method);
   const cardNumber = useSelector((state) => state.payment.cardNumber);
 

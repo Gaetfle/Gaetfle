@@ -47,22 +47,22 @@ const Header = () => {
   useEffect(() => {
     if (Cookies.get("user")) { setIsLogin(true) }
   })
-  useEffect(() => {
+  // useEffect(() => {
 
 
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("header__shrink");
-      } else {
-        headerRef.current.classList.remove("header__shrink");
-      }
-    });
+  //   window.addEventListener("scroll", () => {
+  //     if (
+  //       document.body.scrollTop > 80 ||
+  //       document.documentElement.scrollTop > 80
+  //     ) {
+  //       headerRef.current.classList.add("header__shrink");
+  //     } else {
+  //       headerRef.current.classList.remove("header__shrink");
+  //     }
+  //   });
 
-    return () => window.removeEventListener("scroll");
-  }, []);
+  //   return () => window.removeEventListener("scroll");
+  // }, []);
 
   const loginHandler = () => {
     if (Cookies.get("user")) {
@@ -76,9 +76,9 @@ const Header = () => {
   }
   console.log(isLogin);
   return (
-    <header className="header" ref={headerRef}>
+    <header className="header header__shrink" ref={headerRef}>
       <Container>
-        <div className="nav__wrapper d-flex justify-content-end">
+        <div className="nav__wrapper  d-flex justify-content-end">
           <Link to={`/home`}>
             <div className="logo">
               <img src={logo} alt="logo" />
@@ -106,8 +106,9 @@ const Header = () => {
           </div>
 
           {/* ======== nav right icons ========= */}
-          <div className="nav__right d-flex align-items-center gap-5" style={{
+          <div className="nav__right d-flex align-items-start gap-5" style={{
             zIndex: '3',
+            marginTop: '-3px'
           }}>
 
             <span className="user">

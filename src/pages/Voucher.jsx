@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSectionVoucher";
 import { Container, Row, Col } from "reactstrap";
@@ -6,7 +6,6 @@ import coupon from "../assets/fake-data/coupon";
 import freeship from "../assets/fake-data/freeship";
 import VoucherCard from "../components/UI/voucher/VoucherCard";
 import FreeshipCard from "../components/UI/voucher/FreeshipCard";
-
 import "../styles/all-foods.css";
 import "../styles/pagination.css";
 

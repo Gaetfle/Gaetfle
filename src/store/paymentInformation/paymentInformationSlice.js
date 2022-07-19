@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   method: "BIDV",
-  cardNumber: "1280183911235"
+  cardNumber: "1280183911235",
+  cardHolder: "Nguyen Van A",
 };
 
 const paymentInformationSlice = createSlice({
@@ -15,6 +16,9 @@ const paymentInformationSlice = createSlice({
     },
     setCardNumber(state, action) {
         state.cardNumber = action.payload
+    },
+    setCardHolder(state, action) {
+        state.cardHolder = action.payload
     }
   },
 });
