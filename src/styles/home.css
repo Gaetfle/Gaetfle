@@ -99,11 +99,8 @@
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  margin-left: 570px;
 }
-@media only screen and (max-width: 320px) {
 
-}
 
 @media only screen and (max-width: 576px) {
   .hero__content {
@@ -119,6 +116,9 @@
   }
   .why__choose-us {
     padding-top: 0 !important;
+  }
+  .button__contact {
+    justify-content: center;
   }
 }
 
