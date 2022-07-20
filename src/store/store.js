@@ -7,6 +7,7 @@ import voucherUiSlice from "./voucher/voucherUiSlice";
 import orderInformationSlice from "./orderInformation/orderInformationSlice";
 import paymentInformationSlice from "./paymentInformation/paymentInformationSlice";
 import paymentUiSlice from "./payment/paymentUiSlice";
+import orderlistSlice from "./order/orderSlice";
 const store = configureStore({
   reducer: {
     cart: cartSlice.reducer,
@@ -14,6 +15,7 @@ const store = configureStore({
     cartUi: cartUiSlice.reducer,
     inforUi: inforUiSlice.reducer,
     order: orderInformationSlice.reducer,
+    orderlist: orderlistSlice.reducer,
     payment: paymentInformationSlice.reducer,
     paymentUi: paymentUiSlice.reducer,
     voucherUi: voucherUiSlice.reducer,
