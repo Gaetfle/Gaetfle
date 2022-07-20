@@ -3,10 +3,10 @@ import {AiFillCloseCircle} from 'react-icons/ai';
 import { voucherUiActions } from "../../../store/voucher/voucherUiSlice";
 import "../../../styles/voucher-info.css";
 import { useDispatch } from "react-redux";
-import { ListGroup, Col } from "reactstrap";
+import { ListGroup } from "reactstrap";
 import freeship from "../../../assets/fake-data/freeship";
 import ApplyVoucherCard from "../voucher/ApplyVoucherCard";
-import FreeshipCard from "../voucher/FreeshipCard";
+import ApplyFreeshipCard from "../voucher/ApplyFreeshipCard";
 import coupon from "../../../assets/fake-data/coupon";
 
 const VoucherInfo = () => {
@@ -39,7 +39,7 @@ const VoucherInfo = () => {
           ))}
           {freeshipCard.map((item) => (
             <div key={item.id} className="mb-4">
-              <FreeshipCard id={item.id} title={item.title} image={item.image} desc={item.desc} date={item.date} />
+              <ApplyFreeshipCard id={item.id} title={item.title} image={item.image} desc={item.desc} date={item.date} />
             </div>
           ))}
         </div>

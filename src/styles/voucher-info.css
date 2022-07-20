@@ -42,6 +42,7 @@
   height: calc(100vh - 130px);
   overflow-y: scroll;
   margin-left: 40px;
+  margin-bottom: 80px;
 }
 
 .voucher__bottom{
@@ -118,20 +119,18 @@
   color: #fff;
 }
 
-.voucher__bottom h6 span {
+/* .voucher__bottom h6 span {
   font-size: 1.3rem;
   font-weight: 600;
-}
+} */
 
 .voucher__bottom button {
   border: none;
   padding: 4px 20px;
   border-radius: 5px;
   background: #fff;
-  color: #212245;
-}
-
-.voucher__bottom button a {
-  color: #212245;
+  color: #626546;
+  margin-left: 340px;
+  font-size: 1.2rem;
   font-weight: 600;
 }

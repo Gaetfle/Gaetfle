@@ -22,14 +22,6 @@ const Products = () => {
   const [hasMore, setHasMore] = useState(true);
   const [pageNumber, setPageNumber] = useState(2);
 
-  const [hotPizza, setHotPizza] = useState([]);
-
-  // useEffect(() => {
-  //   const filteredPizza = products.filter((item) => item.category === 'Flower');
-  //   // const slicePizza = filteredPizza.slice(0, 4);
-  //   // setHotPizza(slicePizza);
-  // }, []);
-
   useEffect(()=>{
     if(allProducts.length > 8) {
       setPageNumber(2)
@@ -85,6 +77,16 @@ const Products = () => {
     console.log(showedProducts);
     console.log(pageNumber);
   };
+
+  const handleHighPrice = () => {
+    const highPrice = allProducts.sort((a, b) => b.price - a.price).slice(0, 8);
+    setShowedProducts(highPrice);
+  }
+
+  const handleLowPrice = () => {
+    const lowPrice = allProducts.sort((a, b) => a.price - b.price).slice(0, 8);
+    setShowedProducts(lowPrice);
+  }
 
   return (
     <Helmet title="Products">
@@ -152,12 +154,19 @@ const Products = () => {
                   style={{
                     backgroundColor: '#FCF9F3',
                   }}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    if (e.target.value === 'high-price') {
+                      handleHighPrice();
+                    } 
+                    else if (e.target.value === 'low-price') {
+                      handleLowPrice();
+                    }
+                  }}
                 >
                   <option>Default</option>
-                  {/* <option value="ascending">Alphabetically, A-Z</option>
-                  <option value="descending">Alphabetically, Z-A</option> */}
-                  <option value="high-price">High Price</option>
-                  <option value="low-price">Low Price</option>
+                  <option value="high-price" onClick={handleHighPrice}>High Price</option>
+                  <option value="low-price" onClick={handleLowPrice}>Low Price</option>
                 </select>
               </div>
             </Col>

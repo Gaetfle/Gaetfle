@@ -1,20 +1,23 @@
 import React from "react";
-import "../../../styles/apply-voucher-card.css";
+import "../../../styles/apply-freeship-card.css";
 import { useState, useEffect } from "react";
 import { voucherUiActions } from "../../../store/voucher/voucherUiSlice";
 import { useDispatch } from "react-redux";
+import freeship from "../../../assets/fake-data/freeship";
 
-const VoucherCard = (props) => {
+const ApplyFreeshipCard = (props) => {
     const [textSave, setTextSave] = useState("SAVE")
     const [disableSave, setDisableSave] = useState(false);
     const dispatch = useDispatch();
     function setButton() {
         setDisableSave(!disableSave)
     }
-
+ 
     const optionHandler = (event) => {
         console.log(event.target.value)
-        dispatch(voucherUiActions.setOption(event.target.value))
+        const temp = freeship.filter((item)=>item.id === event.target.value)
+        console.log(temp)
+        dispatch(voucherUiActions.setOption(temp))
        
     }
 
@@ -28,7 +31,7 @@ const VoucherCard = (props) => {
     }, [disableSave]);
     return (
 
-        <div style={{ backgroundColor: "#ebc7af" }} className="coupon rounded mb-3 d-flex justify-content-between">
+        <div style={{ backgroundColor: "#b6d476c2" }} className="coupon rounded mb-3 d-flex justify-content-between">
             <div className="kiri p-3 mt-2">
                 <div className="icon-container ">
                     <div className="icon-container_box" >
@@ -46,8 +49,14 @@ const VoucherCard = (props) => {
             </div>
 
             <div className="kanan ">
-                <div className="info  align-items-center ">
-                    <div class="w-64 mt-4">
+                <div className="info align-items-center ">
+                    <div className="w-64 p-3 mt-2">
+                    <label className="btn__container">
+                        <input type="radio" name="radio" defaultValue={props.id} onClick={optionHandler}/>
+                        <span className="checkmark"></span>
+                    </label>
+                    </div>
+                    <div className="w-64 mt-4">
                         <a 
                             target="_blank" 
                             className="btn  btn-block" 
@@ -71,4 +80,4 @@ const VoucherCard = (props) => {
     );
 };
 
-export default VoucherCard;
+export default ApplyFreeshipCard;

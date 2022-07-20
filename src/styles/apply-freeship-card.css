@@ -1,0 +1,101 @@
+body {
+    background: #dedede;
+}
+
+.coupon{
+    margin-right: 40px;
+}
+
+.coupon .kanan {
+    border-left: 1px dashed #ddd;
+    position: relative;
+}
+
+.coupon .kanan .info::after,
+.coupon .kanan .info::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #FCF9F3;
+    border-radius: 100%;
+}
+
+.coupon .kanan .info::before {
+    top: -10px;
+    left: -10px;
+}
+
+.coupon .kanan .info::after {
+    bottom: -10px;
+    left: -10px;
+}
+
+.coupon .time {
+    font-size: 1.6rem;
+}
+
+.choosedCoupon{
+    margin-right: 40px;
+    height: 80%;
+    width: 94%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.btn__container {
+    display: block;
+    position: relative;
+    padding-left: 5px;
+    margin-left: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn__container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.btn__container:hover input ~ .checkmark {
+    background-color: #fff;
+}
+
+.btn__container input:checked ~ .checkmark {
+    background-color: #86ae2ec2;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.btn__container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.btn__container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}

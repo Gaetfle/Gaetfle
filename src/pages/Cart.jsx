@@ -23,7 +23,7 @@ const Checkout = () => {
 
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
-  const shippingCost = 30;
+  const shippingCost = 20000;
   const dispatch = useDispatch();
   const totalPayment = cartTotalAmount + Number(shippingCost);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -41,7 +41,7 @@ const Checkout = () => {
   const toggleVoucher= () => {
     dispatch(voucherUiActions.toggle());
   };
-  const [choosedVoucher, setChoosedVoucher] = useState(null);
+
   const name = useSelector((state) => state.order.name);
   const phone = useSelector((state) => state.order.phone);
   const address = useSelector((state) => state.order.address);

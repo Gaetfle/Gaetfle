@@ -11,14 +11,16 @@ const freeship = [
         title: "Freeship 50K",
         image: voucher_01,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "02",
         title: "Freeship 20K",
         image: voucher_02,
         desc: "On order 200K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 20000
     },
 
     {
@@ -26,56 +28,64 @@ const freeship = [
         title: "Freeship 50K",
         image: voucher_04,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "04",
         title: "Freeship 50K",
         image: voucher_05,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "05",
         title: "Freeship 50K",
         image: voucher_01,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "06",
         title: "Freeship 50K",
         image: voucher_02,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "07",
         title: "Freeship 50K",
         image: voucher_03,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "08",
         title: "Freeship 50K",
         image: voucher_04,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "09",
         title: "Freeship 50K",
         image: voucher_05,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
     {
         id: "10",
         title: "Freeship 50K",
         image: voucher_01,
         desc: "On order 500K or more",
-        date: "20/07/2022"
+        date: "20/07/2022",
+        price: 50000
     },
 ];
 

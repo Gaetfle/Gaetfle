@@ -5,7 +5,7 @@ import { voucherUiActions } from "../../../store/voucher/voucherUiSlice";
 import { useDispatch } from "react-redux";
 import coupon from "../../../assets/fake-data/coupon";
 
-const VoucherCard = (props) => {
+const ApplyVoucherCard = (props) => {
     const [textSave, setTextSave] = useState("SAVE")
     const [disableSave, setDisableSave] = useState(false);
     const dispatch = useDispatch();
@@ -80,4 +80,4 @@ const VoucherCard = (props) => {
     );
 };
 
-export default VoucherCard;
+export default ApplyVoucherCard;
