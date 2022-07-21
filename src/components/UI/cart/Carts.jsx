@@ -16,12 +16,12 @@ const Carts = () => {
   };
   return (
     <div className="cart__container">
-      <ListGroup className="cart" style={{borderRadius: "30px"}}>
+      <ListGroup className="cart" style={{ borderRadius: "30px" }}>
         <div className="cart__close d-flex">
           <span onClick={toggleCart}>
             <i className="ri-close-fill"></i>
           </span>
-          <span style={{marginLeft: "-440px", color: "#626546"}}>
+          <span style={{ marginLeft: "-440px", color: "#626546" }}>
             <h5>Cart</h5>
           </span>
         </div>
@@ -34,7 +34,7 @@ const Carts = () => {
               <CartItem item={item} key={index} />
             ))
           )}
-        </div> 
+        </div>
 
         <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
