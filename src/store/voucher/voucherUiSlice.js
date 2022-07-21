@@ -12,11 +12,13 @@ const voucherUiSlice = createSlice({
       state.option = action.payload[0].id;
       state.title = action.payload[0].title;
       state.image = action.payload[0].image;
+      state.price = action.payload[0].price;
     },
     deleteOption(state){
       state.option = '';
       state.title = '';
       state.image = '';
+      state.price = '';
     },
   },
 });

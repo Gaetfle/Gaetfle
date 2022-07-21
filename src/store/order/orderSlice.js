@@ -4,22 +4,15 @@ const initialState = {
     orderlistItems: [{
         id: "GT88",
         date: "19/7/2022",
-        total: "1000000",
+        total: "2,350,000",
         status: "pending",
-        payment: "BIDV",
+        payment: "VPBank",
     }, {
         id: "GT89",
         date: "19/7/2022",
-        total: "1000000",
+        total: "2,000,000",
         status: "pending",
-        payment: "BIDV",
-    },
-    {
-        id: "GT90",
-        date: "19/7/2022",
-        total: "1000000",
-        status: "pending",
-        payment: "BIDV",
+        payment: "VPBank",
     }]
 };
 

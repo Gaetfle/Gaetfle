@@ -1,23 +1,9 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
-import "../styles/checkout.css";
 import { Link } from "react-router-dom";
 import { MdArrowBack } from 'react-icons/md';
-import { AiOutlineDollar } from 'react-icons/ai';
-import { HiLocationMarker } from 'react-icons/hi';
-import { MdPayment } from 'react-icons/md';
-import { TbDiscount2 } from 'react-icons/tb';
-import { BsFillArrowRightCircleFill } from 'react-icons/bs';
-import CheckoutCartItem from "../components/UI/checkout-card/CheckoutCartItem";
-import ShippingInfo from "../components/UI/shipping-info/ShippingInfor";
-import PaymentInfo from "../components/UI/payment-info/PaymentInfor";
-import VoucherInfo from "../components/UI/voucher-info/VoucherInfor";
-import { inforUiActions } from "../store/shipping-infor/inforUiSlice";
-import { paymentUiActions } from "../store/payment/paymentUiSlice";
-import { voucherUiActions } from "../store/voucher/voucherUiSlice";
-import ChoosedVoucherCard from "../components/UI/voucher/ChoosedVoucher";
 import OrderCard from "../components/UI/ordercard/OrderCard";
 
 const Order = () => {
@@ -31,11 +17,25 @@ const Order = () => {
                     <Row>
                         <div className="narrow__back d-flex">
                             <span>
-                                <Link to="/cart">
-                                    <MdArrowBack />
+                                <Link to="/home">
+                                    <MdArrowBack /> <span style={{marginLeft: "20px", fontSize: "20px", fontWeight: 600}}>BACK TO HOMEPAGE</span>
                                 </Link>
                             </span>
                         </div>
+                    </Row>
+                    <Row>
+                        <h5 
+                            style={{
+                                marginTop: "-50px", 
+                                marginBottom: "50px", 
+                                fontSize: "40px", 
+                                fontWeight: 600,
+                                color: "#626546",
+                                textAlign: "center"
+                            }}
+                            >
+                                List Of Orders
+                            </h5>
                     </Row>
                     <Row>
 
@@ -43,19 +43,19 @@ const Order = () => {
                             <div className="checkout__bill">
                                 <div className="detail__infor">
                                     <p className="cart__product-price d-flex align-items-center gap-5" style={{ marginLeft: "10px", marginTop: "10px" }}>
-                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "80px", marginRight: "10px" }}>
+                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "50px", marginRight: "10px" }}>
                                             <span style={{ color: "#FFFFFF" }} className="w-20">Order Id </span>
                                         </div>
                                         <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "10px", marginRight: "20px" }}>
                                             <span style={{ color: "#FFFFFF" }} className="w-20">Order Date </span>
                                         </div>
-                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "10px", marginRight: "20px" }}>
+                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "15px", marginRight: "35px" }}>
                                             <span style={{ color: "#FFFFFF" }} className="w-20">Payment </span>
                                         </div>
-                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "10px", marginRight: "30px" }}>
+                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "85px", marginRight: "30px" }}>
                                             <span style={{ color: "#FFFFFF" }} className="w-20">Total </span>
                                         </div>
-                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "10px", marginRight: "30px" }}>
+                                        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "120px", marginRight: "30px" }}>
                                             <span style={{ color: "#FFFFFF" }} className="w-20">Status </span>
                                         </div>
                                     </p>

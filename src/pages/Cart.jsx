@@ -48,6 +48,7 @@ const Checkout = () => {
   const address = useSelector((state) => state.order.address);
   const gmail = useSelector((state) => state.order.gmail);
   const voucherTitle = useSelector((state) => state.voucherUi.title);
+  const voucherPrice = useSelector((state) => state.voucherUi.price);
   const method = useSelector((state) => state.payment.method);
   const cardNumber = useSelector((state) => state.payment.cardNumber);
   const current = new Date();
@@ -145,13 +146,20 @@ const Checkout = () => {
                   </span>
                   <h4 style={{ marginBottom: "15px" }}>Applied Vouchers</h4>
                   <div className="voucher__area">
-                    {voucherTitle  && <ChoosedVoucherCard title={voucherTitle}/>}
+                    {voucherTitle ? (
+                      <>
+                        <ChoosedVoucherCard title={voucherTitle}/>
+                        <span style={{marginLeft: "320px"}}>
+                          <BsFillArrowRightCircleFill style={{cursor: "pointer", marginTop: "-10px"}} onClick={toggleVoucher}/>
+                        </span>
+                      </>
+                    ) : (
                     <span style={{marginLeft: "320px"}}>
-                      <BsFillArrowRightCircleFill style={{cursor: "pointer", marginTop: "-8px"}} onClick={toggleVoucher}/>
+                      <BsFillArrowRightCircleFill style={{cursor: "pointer", marginTop: "16px"}} onClick={toggleVoucher}/>
                     </span>
+                    )}
                     { showVoucher && <VoucherInfo/>}
                   </div>
-
                 </div>
 
                 <div className="detail__infor">
@@ -166,17 +174,28 @@ const Checkout = () => {
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
                   Shipping: <span>{shippingCost.toLocaleString("en-US")} VNĐ</span>
                 </h6>
+                {voucherTitle && <h6 className="d-flex align-items-center justify-content-between mb-3">
+                  Discount: <span>- {voucherPrice.toLocaleString("en-US")} VNĐ</span>
+                </h6>}
                 <div className="checkout__total">
-                  <h5 className="d-flex align-items-center justify-content-between">
-                    Total: <span>{totalPayment.toLocaleString("en-US")} VNĐ</span>
-                  </h5>
+                  {
+                    voucherTitle ? (
+                      <h5 className="d-flex align-items-center justify-content-between">
+                        Total: <span>{(totalPayment - voucherPrice).toLocaleString("en-US")} VNĐ</span>
+                      </h5>
+                    ) : (
+                      <h5 className="d-flex align-items-center justify-content-between">
+                        Total: <span>{totalPayment.toLocaleString("en-US")} VNĐ</span>
+                      </h5>
+                    )
+                  }
                 </div>
                 <div className="order__button">
-                  <button >
-                    <Link to="/order" onClick={addToOrder}>
+                  <Link to="/order" onClick={addToOrder}>
+                    <button >
                       Order
-                    </Link>
-                  </button>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </Col>

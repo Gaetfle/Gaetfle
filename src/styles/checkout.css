@@ -79,11 +79,16 @@
   width: 100%;
 }
 
+.order__button button:hover{
+  background: #999B84;
+  color: #fff;
+}
+
 .voucher__area{
   background: transparent;
   border: 2px solid #fff;
   border-radius: 20px;
-  height: 65px;
+  height: 62px;
 }
 
 .totalQuantity{

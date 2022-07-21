@@ -25,10 +25,6 @@ const VoucherInfo = () => {
         <div className="voucher__close" style={{cursor: "pointer"}} onClick={toggleInfor}>
           <AiFillCloseCircle/>   
         </div>
-        
-        {/* <div className="voucher-info__title">
-          <h3>Vouchers</h3>
-        </div> */}
 
         <div className="voucher__item-list">
           {coupon.map((item) => (
