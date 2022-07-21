@@ -1,38 +1,32 @@
-body {
-    background: #dedede;
-}
-
-.coupon{
+.coupon-container {
     margin-right: 40px;
+    width: 160px;
+    margin-left: -10px;
+    margin-top: 6px;
 }
 
-.coupon .kanan-container {
+.coupon-container .kanan-container {
     border-left: 1px dashed #ddd;
     position: relative;
 }
 
-.coupon .kanan-container .info-coupon::after,
-.coupon .kanan-container .info-coupon::before {
+.coupon-container .kanan-container .info-coupon::after,
+.coupon-container .kanan-container .info-coupon::before {
     content: '';
     position: absolute;
     width: 20px;
     height: 20px;
-    /* background: red; */
     border-radius: 100%;
 }
 
-.coupon .kanan-container .info-coupon::before {
+.coupon-container .kanan-container .info-coupon::before {
     top: -10px;
     left: -10px;
 }
 
-.coupon .kanan-container .info-coupon::after {
+.coupon-container .kanan-container .info-coupon::after {
     bottom: -10px;
     left: -10px;
-}
-
-.coupon .time {
-    font-size: 1.6rem;
 }
 
 .choosedCoupon{
@@ -41,4 +35,10 @@ body {
     width: 94%;
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.btn__coupon{
+    padding: 15px 15px 0px 15px;
+    margin-top: -5px;
+    cursor: pointer;
 }

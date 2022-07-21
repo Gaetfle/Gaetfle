@@ -7,6 +7,8 @@ import voucherUiSlice from "./voucher/voucherUiSlice";
 import orderInformationSlice from "./orderInformation/orderInformationSlice";
 import paymentInformationSlice from "./paymentInformation/paymentInformationSlice";
 import paymentUiSlice from "./payment/paymentUiSlice";
+import appliedUiSlice from "./applied-voucher/appliedUiSlice";
+
 const store = configureStore({
   reducer: {
     cart: cartSlice.reducer,
@@ -17,6 +19,7 @@ const store = configureStore({
     payment: paymentInformationSlice.reducer,
     paymentUi: paymentUiSlice.reducer,
     voucherUi: voucherUiSlice.reducer,
+    appliedUi: appliedUiSlice.reducer,
   },
 });
 

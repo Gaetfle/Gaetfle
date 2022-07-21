@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
@@ -47,7 +47,6 @@ const Checkout = () => {
   const address = useSelector((state) => state.order.address);
   const gmail = useSelector((state) => state.order.gmail);
   const voucherTitle = useSelector((state) => state.voucherUi.title);
-  // const voucherImg = useSelector((state) => state.voucherUi.title);
   const method = useSelector((state) => state.payment.method);
   const cardNumber = useSelector((state) => state.payment.cardNumber);
 
@@ -132,13 +131,12 @@ const Checkout = () => {
                   </span>
                   <h4 style={{marginBottom: "15px"}}>Applied Vouchers</h4>
                   <div className="voucher__area">
-                    {voucherTitle && <ChoosedVoucherCard title={voucherTitle}/>}
-                  <div className="voucher__item">
-                    </div>
-                      <span style={{marginLeft: "320px"}}>
-                        <BsFillArrowRightCircleFill style={{cursor: "pointer", position: "static"}} onClick={toggleVoucher}/>
-                      </span>
-                      { showVoucher && <VoucherInfo/>}
+                    {voucherTitle  && <ChoosedVoucherCard title={voucherTitle}/>}
+                    <span style={{marginLeft: "320px"}}>
+                      <BsFillArrowRightCircleFill style={{cursor: "pointer", marginTop: "-8px"}} onClick={toggleVoucher}/>
+                    </span>
+                    { showVoucher && <VoucherInfo/>}
+                    
                   </div>
                   
                 </div>

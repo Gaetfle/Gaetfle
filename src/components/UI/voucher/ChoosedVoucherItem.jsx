@@ -1,41 +1,34 @@
 import React from "react";
 import "../../../styles/choosed-voucher.css";
+import {RiCloseCircleFill} from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import {voucherUiActions} from "../../../store/voucher/voucherUiSlice";
 
 const ChoosedVoucherItem = (props) => {
+    const dispatch = useDispatch();
+    const toggleAppliedVoucher= () => {
+        dispatch(voucherUiActions.deleteOption());
+    }
     return (
 
-        <div style={{ backgroundColor: "#ebc7af" }} className="coupon rounded mb-3 d-flex justify-content-between">
-            <div className="kiri p-3 mt-2">
-                <div className="icon-container ">
-                    <div className="icon-container_box" >
-                        <img src={props.image} width="50" alt="voucher"/>
-                    </div>
-                </div>
-            </div>
-            <div className="tengah pt-2 d-flex w-100 justify-content-start mt-2">
+        <div style={{ backgroundColor: "#ebc7af" }} className="coupon-container rounded mb-2 d-flex justify-content-between">
+            <div className="tengah pt-2 d-flex w-100 justify-content-start mt-3">
                 <div>
-                    <h3 className="mb-1 " style={{ fontSize: 16, fontWeight: "bold" }}>{props.title} </h3>
-                    <p className=" mb-2 " style={{ fontSize: 14, }}>{props.desc}</p>
-                    <p className="text-muted   " style={{ fontSize: 12, }}>{props.date}</p>
+                    <h3 className="coupon__title mb-1" 
+                        style={{ 
+                            fontSize: 16, 
+                            fontWeight: "bold", 
+                            paddingLeft: "16px", 
+                            paddingBottom: "8px", 
+                            marginTop: "-10px" 
+                        }}>{props.title} </h3>
                 </div>
-
             </div>
 
             <div className="kanan-container">
                 <div className="info-coupon align-items-center ">
-                    <div className="w-64 mt-4">
-                        <a 
-                            target="_blank" 
-                            className="btn  btn-block" 
-                            style={{
-                                display: "flex",
-                                alignItems: "flex-end",
-                                justifyContent: "flex-end", 
-                                fontSize: 10
-                            }}
-                        >
-                            Conditions
-                        </a>
+                    <div className="btn__coupon w-64" onClick={toggleAppliedVoucher}>
+                        <RiCloseCircleFill/>
                     </div>
                 </div>
 

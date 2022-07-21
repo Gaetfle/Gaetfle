@@ -41,17 +41,17 @@ const Carts = () => {
             Subtotal : <span>{totalAmount.toLocaleString("en-US")} VNĐ</span>
           </h6>
           {cartProducts.length === 0 ? (
-            <button>
-              <Link to="#" onClick={toggleCart}>
+            <Link to="#" onClick={toggleCart}>
+              <button>
                 Order
-              </Link>
-            </button>
-          ):(
-            <button>
-            <Link to="/cart" onClick={toggleCart}>
-              Order
+              </button>
             </Link>
-          </button>
+          ):(
+            <Link to="/cart" onClick={toggleCart}>
+              <button>
+                Order
+              </button>
+            </Link>
           )}
         </div>
       </ListGroup>
