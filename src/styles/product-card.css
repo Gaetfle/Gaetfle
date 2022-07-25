@@ -46,21 +46,29 @@
   font-size: 0.9rem;
 }
 
+.product__button{
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
 .cart_button {
-  height: 40px;
-  width: 55px;
+  height: 35px;
+  width: 150px;
   background-color: #c98557;
-  padding-top: 10px;
+  padding-top: 8px;
   margin-bottom: 5px;
-  margin-left: 90px;
+  margin-left: 36px;
   text-align: center;
   border-radius: 10px;
-
 }
 
-.cart_button svg{
-  margin-top: -7px;
+.cart_button h6{
+  color: #FCF9F3;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
+
 
 @media only screen and (max-width: 992px) {
   .cart_button {

@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 import Rating from '@mui/material/Rating';
-import { GrCart } from "react-icons/gr";
+// import { GrCart } from "react-icons/gr";
 import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import {Checkbox} from '@mui/material';
+import {FavoriteBorder, Favorite} from "@mui/icons-material";
 
 
 const ProductCard = (props) => {
@@ -44,12 +45,14 @@ const ProductCard = (props) => {
 
         <div className=" d-flex align-items-center justify-content-between ">
           <span className="product__price">{price.toLocaleString("en-US")} VNĐ</span>
-          <div className="cart_button" onClick={addToCart}>
-            <GrCart />
+          <div className="product__button">
+            <div className="cart_button" onClick={addToCart}>
+              <h6>Buy</h6>
+            </div>
+            <IconButton aria-label="add to favorites" style={{marginTop: "-5px", marginRight: "-8px", padding: "0"}}>
+              <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{ color: "red" }} />} />
+            </IconButton>
           </div>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
         </div>
       </div>
     </div>

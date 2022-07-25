@@ -4,7 +4,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(0, 0, 0, 0.639); */
   z-index: 99999;
 }
 
@@ -57,8 +56,10 @@
 }
 
 .cart__bottom h6 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .cart__bottom h6 span {
@@ -68,15 +69,17 @@
 
 .cart__bottom button {
   border: none;
-  padding: 4px 20px;
-  border-radius: 5px;
+  padding: 4px 15px 4px;
+  border-radius: 10px;
   background: #fff;
-  color: #212245;
 }
 
-.cart__bottom button a {
-  color: #212245;
+.cart__bottom button h6 {
+  color: #626546;
   font-weight: 600;
+  margin-top: 7px;
+  margin-right: 10px;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 576px) {

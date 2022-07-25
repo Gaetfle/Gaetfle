@@ -52,9 +52,9 @@ const PaymentInfo = () => {
       <div className="payment-info">
       < div className="payment__img">
         <img src={PaymentImg} alt="payment-img" />
-          <div className="payment-info__title">
+          {/* <div className="payment-info__title">
             <h3>Payment Infor</h3>
-          </div>
+          </div> */}
       </div>
         <div className="payment-info__container">
           <div className="payment__close" style={{cursor: "pointer"}} onClick={togglePayment}>

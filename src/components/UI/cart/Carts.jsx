@@ -43,13 +43,13 @@ const Carts = () => {
           {cartProducts.length === 0 ? (
             <Link to="#" onClick={toggleCart}>
               <button>
-                Order
+                <h6>Order</h6>
               </button>
             </Link>
           ):(
             <Link to="/cart" onClick={toggleCart}>
               <button>
-                Order
+                <h6>Order</h6>
               </button>
             </Link>
           )}

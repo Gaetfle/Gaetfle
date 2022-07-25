@@ -10,7 +10,7 @@ const Order = () => {
     const orderItems = useSelector((state) => state.orderlist.orderlistItems);
 
     return (
-        <Helmet title="Cart">
+        <Helmet title="Orders">
             {console.log((state) => state.orderlist.orderlistItems)}
             <section>
                 <Container>

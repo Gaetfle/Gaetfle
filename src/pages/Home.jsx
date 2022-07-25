@@ -4,38 +4,16 @@ import { Container, Row, Col } from "reactstrap";
 import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
-import featureImg01 from "../assets/images/Delivery.png";
-import featureImg02 from "../assets/images/Order.png";
-import featureImg03 from "../assets/images/Deliveryfaster.png";
 import products from "../assets/fake-data/products.js";
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 import donutImg from "../assets/images/donut.png";
 import TestimonialSlider from "../components/UI/slider/BannerSlider.jsx";
 import Cookies from 'js-cookie';
-
-const featureData = [
-  {
-    title: "Delivery Food",
-    imgUrl: featureImg01,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
-  },
-
-  {
-    title: "Easy To Order",
-    imgUrl: featureImg02,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
-  },
-  {
-    title: "Fastest Delivery",
-    imgUrl: featureImg03,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
-  },
-];
+import BestProductSlider from "../components/UI/slider/BestProductSlider.jsx";
+import NewProductSlider from "../components/UI/slider/NewProductSlider.jsx";
+import RecommendProductSlider from "../components/UI/slider/RecommendProductSlider.jsx";
 
 const Home = () => {
-  // const [searchTerm, setSearchTerm] = useState("");
-  const [allProducts, setAllProducts] = useState(products);
-  // const [hotPizza, setHotPizza] = useState([]);
+  
   const [email, setEmail] = useState("")
   useEffect(() => {
     const email = Cookies.get("user")
@@ -44,21 +22,8 @@ const Home = () => {
     }
   }, [])
 
-  const [gift83, setGift83] = useState([]);
-  const [bestseller, setBestseller] = useState([]);
-  const [newProduct, setNewProduct] = useState([]);
-
-  useEffect(() => {
-    const filteredGift83 = products.filter((item) => item.type === "gift for 83");
-    const filteredBestseller = products.filter((item) => item.type === "best seller");
-    const filteredNew = products.filter((item) => item.type === "new");
-    setGift83(filteredGift83);
-    setBestseller(filteredBestseller);
-    setNewProduct(filteredNew);
-  }, []);
-
-  let messagebtn = "Login";
-  if (email) messagebtn = "Logout"
+  //let messagebtn = "Login";
+  //if (email) messagebtn = "Logout"
   //<button> messagebtn </button>
   // Cookies.remove("user")
 
@@ -97,86 +62,27 @@ const Home = () => {
       </section>
 
       <section>
-        <Container style={{ marginBottom: "160px" }}>
-          <Row>
-            <Col lg="12" className="text-center">
+        <div style={{ marginBottom: "50px", padding: "50px" }}>
+          <div className="text-center">
               <h2>Best Seller Products</h2>
-            </Col>
-            {bestseller.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
-                <ProductCard item={item} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
+          </div>
+            <BestProductSlider/>
+        </div>
 
-        <Container style={{ marginBottom: "160px" }}>
-          <Row>
-            <Col lg="12" className="text-center">
+        <div style={{ marginBottom: "50px", padding: "50px" }}>
+          <div className="text-center">
               <h2>Newest Products</h2>
-            </Col>
-            {newProduct.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
-                <ProductCard item={item} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
+          </div>
+            <NewProductSlider/>
+        </div>
 
-        <Container>
-          <Row>
-            <Col lg="12" className="text-center">
-              <h2>Gift For This 8/3</h2>
-            </Col>
-
-            {gift83.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
-                <ProductCard item={item} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
+        <div style={{ marginBottom: "50px", padding: "50px" }}>
+          <div className="text-center">
+              <h2>Gift for 8/3 - International Woman's Day</h2>
+          </div>
+            <RecommendProductSlider/>
+        </div>
       </section>
-
-      <section>
-        <Container>
-          <Row>
-            <Col lg="12" className="text-center">
-              <h2 className="feature__title"><span>Our features</span></h2>
-            </Col>
-
-            {featureData.map((item, index) => (
-              <Col lg="4" md="6" sm="6" key={index} className="mt-5">
-                <div className="feature__item text-center px-5 py-3">
-                  <img
-                    src={item.imgUrl}
-                    alt="feature-img"
-                    className="w-50 h-150 mb-3"
-                  />
-                  <h5 className=" fw-bold mb-3">{item.title}</h5>
-                  <p>{item.desc}</p>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-
-      {/* <section className="pt-0">
-        <Container>
-          <Row>
-            <Col lg="12" className="text-center mb-5 ">
-              <h2>Hot Pizza</h2>
-            </Col>
-
-            {hotPizza.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
-                <ProductCard item={item} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section> */}
 
       <section>
         <div className="testimonial ">
