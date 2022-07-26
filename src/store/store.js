@@ -8,7 +8,6 @@ import orderInformationSlice from "./orderInformation/orderInformationSlice";
 import paymentInformationSlice from "./paymentInformation/paymentInformationSlice";
 import paymentUiSlice from "./payment/paymentUiSlice";
 import orderlistSlice from "./order/orderSlice";
-import confirmUiSlice from "./confirm-box/confirmUiSlice";
 
 const store = configureStore({
   reducer: {
@@ -21,7 +20,6 @@ const store = configureStore({
     payment: paymentInformationSlice.reducer,
     paymentUi: paymentUiSlice.reducer,
     voucherUi: voucherUiSlice.reducer,
-    confirmUi: confirmUiSlice.reducer,
   },
 });
 

@@ -21,9 +21,8 @@ const Carts = () => {
           <span onClick={toggleCart}>
             <i className="ri-close-fill"></i>
           </span>
-          <span style={{ marginLeft: "-440px", color: "#626546" }}>
-            <h5>Cart</h5>
-          </span>
+          <h5>Cart</h5>
+
         </div>
 
         <div className="cart__item-list">
@@ -47,7 +46,7 @@ const Carts = () => {
               </button>
             </Link>
           ):(
-            <Link to="/cart" onClick={toggleCart}>
+            <Link to="/order" onClick={toggleCart}>
               <button>
                 <h6>Order</h6>
               </button>

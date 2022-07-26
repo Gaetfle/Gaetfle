@@ -1,10 +1,7 @@
 import React from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSectionVoucher";
-
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import logo from "../assets/images/res-logo.png";
-import { Link } from "react-router-dom";
+import { Container, Row, Col } from "reactstrap";
 import "../styles/contact.css";
 
 const Contact = () => {

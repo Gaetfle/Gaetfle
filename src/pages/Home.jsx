@@ -4,7 +4,6 @@ import { Container, Row, Col } from "reactstrap";
 import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
-import products from "../assets/fake-data/products.js";
 import donutImg from "../assets/images/donut.png";
 import TestimonialSlider from "../components/UI/slider/BannerSlider.jsx";
 import Cookies from 'js-cookie';
@@ -44,7 +43,7 @@ const Home = () => {
                 </p>
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                    <Link to="/products">Order now <i class="ri-arrow-right-s-line"></i></Link>
+                    <Link to="/products">Order now <i className="ri-arrow-right-s-line"></i></Link>
                   </button>
 
                   <button className="all__foods-btn">

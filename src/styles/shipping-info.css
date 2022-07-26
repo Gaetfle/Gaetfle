@@ -36,50 +36,60 @@
     font-weight: bold;
     color: #626546;
     margin-bottom: 30px;
-    margin-top: -40px;
+    margin-top: -30px;
 }
 
 .shipping-info__container{
     width: 400px;
-    height: 400px;
+    height: 600px;
     background-color: #fff;
     padding: 30px;
     margin: 30px 20px 30px 0px;
     border-radius: 0px 30px 30px 0px;
-    border-left: 2px dashed #626546;
+    border-left: 2px dashed #CCA085;
     text-align: center;
 }
 
 .shipping-info__content input{
     margin-bottom: 20px;
     border: 2px solid #626546;
-     padding-left: 20px; 
-    padding: 5px 0px 5px 20px;
-    border-radius: 15px;
+    padding-left: 20px; 
+    padding: 6px 0px 6px 20px;
+    border-radius: 10px;
+    background: rgb(244, 244, 244);
     width: 90%;
 }
 
-.shipping-info__content button{
-    margin-bottom: 20px;
+.payment-info__button button{
+    margin-top: 5px;
     background-color: #626546;
     border: none;
     color: #fff;
     border-radius: 15px;
     padding: 10px 0px 10px 0px;
-    width: 40%;
+    width: 90%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.shipping-info__content button:hover{
+    background-color: #EBC7AF;
+    color: #626546;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .shipping__img{
     display: flex;
     background: #fff;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 600px;
     border-radius: 30px 0px 0px 30px;
 }
 
 .shipping__img img{
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 140px;
 }

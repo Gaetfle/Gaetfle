@@ -14,17 +14,18 @@ const bank = [
   {label: 'Sacombank', value: 'scb'},
   {label: 'Argibank', value: 'agb'},
   {label: 'Techcombank', value: 'tcb'},
-  {label: 'Thanh toán trực tiếp', value: 'tttt'}
 ];
 
 const PaymentInfo = () => {
-  // const [inputValue, setInputValue] = useState('');
+
   const currentMethod = useSelector((state) => state.payment.method);
   const currentCardNumber = useSelector((state) => state.payment.cardNumber);
   const currentCardHolder = useSelector((state) => state.payment.cardHolder);
-  const [method, setMethod] = useState(currentMethod)
-  const [cardNumber, setCardNumber] = useState(currentCardNumber)
-  const [cardHolder, setCardHolder] = useState(currentCardHolder)
+  const [method, setMethod] = useState(currentMethod);
+  const [cardNumber, setCardNumber] = useState(currentCardNumber);
+  const [cardHolder, setCardHolder] = useState(currentCardHolder);
+
+  const [visible, setVisible] = useState(false);
 
   const dispatch = useDispatch();
   const togglePayment= () => {
@@ -52,37 +53,49 @@ const PaymentInfo = () => {
       <div className="payment-info">
       < div className="payment__img">
         <img src={PaymentImg} alt="payment-img" />
-          {/* <div className="payment-info__title">
-            <h3>Payment Infor</h3>
-          </div> */}
       </div>
         <div className="payment-info__container">
           <div className="payment__close" style={{cursor: "pointer"}} onClick={togglePayment}>
             <AiFillCloseCircle/> 
           </div>
-          
-          <div className="payment-info__content">
-            <div className="bank-info">
-              <h6>Payment method:</h6>
-              <select id="bank" onChange={getMethod} defaultValue={currentMethod}>
-                {bank.map(item => (
-                  <option>
-                    {item.label}
-                  </option>
-                ))}
-              </select>
+          <div className="payment-info__title">
+            <h3>Payment Infomation</h3>
+          </div>
+          <form>
+            <label for="tttt">
+              <input type="radio" name="method" id="tttt" value="tt" onClick={ ()=>setVisible(false)}/>
+              <span>Thanh toán trực tiếp</span>
+            </label>
+            <label for="ccard">
+              <input type="radio" name="method" id="ccard" value="cc" onClick={ ()=>setVisible(true)}/>
+              <span>Thanh toán bằng thẻ</span>
+            </label>
+            { visible &&
+              <div className="payment-info__content">
+              <div className="bank-info">
+                <h6>Payment method:</h6>
+                <select id="bank" onChange={getMethod} defaultValue={currentMethod}>
+                  {bank.map(item => (
+                    <option>
+                      {item.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="card-number">
+                <h6>Card number:</h6>
+                <input type="text" placeholder='Enter card number' onChange={getCardNumber} defaultValue={currentCardNumber}/>
+              </div>
+  
+              <div className="card-number">
+                <h6>Card holder:</h6>
+                <input type="text" placeholder='Enter card holder'onChange={getCardHolder} defaultValue={currentCardHolder}/>
+              </div>
             </div>
-            <div className="card-number">
-              <h6>Card number:</h6>
-              <input type="text" placeholder='Enter card number' onChange={getCardNumber} defaultValue={currentCardNumber}/>
-            </div>
-
-            <div className="card-number">
-              <h6>Card holder:</h6>
-              <input type="text" placeholder='Enter card holder'onChange={getCardHolder} defaultValue={currentCardHolder}/>
-            </div>
-
-            <button onClick={togglePayment}>OK</button>    
+            }
+          </form>
+          <div className="payment-info__button">
+            <button onClick={togglePayment}>OK</button>
           </div>
         </div>            
       </div>

@@ -50,11 +50,11 @@ const Footer = () => {
               <ListGroup>
                 <div className="social__links d-flex align-items-center gap-3">
                   <span>
-                    <i class="ri-facebook-line"></i>
+                    <i className="ri-facebook-line"></i>
                   </span>
 
                   <span>
-                    <i class="ri-instagram-line"></i>
+                    <i className="ri-instagram-line"></i>
                   </span>
                 </div>
               </ListGroup>

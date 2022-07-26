@@ -19,7 +19,7 @@ import { paymentUiActions } from "../store/payment/paymentUiSlice";
 import { voucherUiActions } from "../store/voucher/voucherUiSlice";
 import ChoosedVoucherCard from "../components/UI/voucher/ChoosedVoucher";
 import { orderlistActions } from "../store/order/orderSlice";
-
+import Stepper from "../components/UI/stepper/Stepper";
 const Checkout = () => {
 
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -45,7 +45,10 @@ const Checkout = () => {
 
   const name = useSelector((state) => state.order.name);
   const phone = useSelector((state) => state.order.phone);
-  const address = useSelector((state) => state.order.address);
+  const street = useSelector((state) => state.order.street);
+  const ward = useSelector((state) => state.order.ward);
+  const district = useSelector((state) => state.order.district);
+  const province = useSelector((state) => state.order.province);
   const gmail = useSelector((state) => state.order.gmail);
   const voucherTitle = useSelector((state) => state.voucherUi.title);
   const voucherPrice = useSelector((state) => state.voucherUi.price);
@@ -66,7 +69,7 @@ const Checkout = () => {
     );
   }
   return (
-    <Helmet title="Cart">
+    <Helmet title="Order">
       <section>
         <Container>
           <Row>
@@ -76,6 +79,9 @@ const Checkout = () => {
                   <MdArrowBack />
                 </Link>
               </span>
+            </div>
+            <div className="stepper">
+              <Stepper />
             </div>
           </Row>
           <Row>
@@ -106,16 +112,15 @@ const Checkout = () => {
                   {name} <span>{phone}</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  {address}
+                  {street}, {ward}, {district}, {province}
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
                   {gmail}
                 </h6>
-
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{ color: "#999B84" }}>
                   Mặc định
                   <span
-                    style={{ color: "white", cursor: "pointer" }}
+                    style={{ color: "white", cursor: "pointer"}}
                     onClick={toggleInfor}
                   >
                     Thay đổi

@@ -45,7 +45,7 @@ const Search = ({placeholder, data}) => {
           )}
         </div>
     </div>
-      {filteredData.length != 0 && (
+      {filteredData.length !== 0 && (
         <div className="dataResult">
           {filteredData.slice(0, 10).map((item, index) => {
             return (

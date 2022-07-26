@@ -55,7 +55,7 @@
   color:#626546;
   font-size: 30px;
   margin-top: -55px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 .narrow__back span:hover{
@@ -64,6 +64,10 @@
 
 .narrow__back a:hover{
   color:#999B84;
+}
+
+.stepper{
+  margin-bottom: 60px;
 }
 
 .order__button button{

@@ -29,9 +29,9 @@ const FreeshipCard = (props) => {
             </div>
             <div className="tengah pt-2 d-flex w-100 justify-content-start mt-2">
                 <div>
-                    <h3 className="mb-1 " style={{ fontSize: 16, fontWeight: "bold" }}>{props.title} </h3>
-                    <p className=" mb-2 " style={{ fontSize: 14, }}>{props.desc}</p>
-                    <p className="text-muted   " style={{ fontSize: 12, }}>{props.date}</p>
+                    <h3 className="mb-1" style={{ fontSize: 16, fontWeight: "bold" }}>{props.title} </h3>
+                    <p className=" mb-2" style={{ fontSize: 14, }}>{props.desc}</p>
+                    <p className="text-muted" style={{ fontSize: 12, }}>{props.date}</p>
                 </div>
 
             </div>
@@ -41,7 +41,6 @@ const FreeshipCard = (props) => {
                     <div className="w-64 p-3 mt-2">
                         <button onClick={setButton} target="_blank" className="btn btn-sm" style={{
                             backgroundColor: disableSave ? "#b6d476c2" : "#fff",
-                            // border: "1px solid #b6d476c2",
                             color: "rgb(162 167 116)",
                             display: 'flex',
                             alignItems: 'center',

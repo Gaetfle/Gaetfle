@@ -29,22 +29,11 @@ const CheckoutCartItem = ({ item }) => {
               <div className=" d-flex align-items-center justify-content-between" style={{marginLeft: "120px", marginRight: "160px"}}>
                 <span className="quantity">{quantity}</span>
               </div> 
-            <span style={{color: "rgb(174 130 103)"}}>{totalPrice.toLocaleString("en-US")} VNĐ</span>
+              <span style={{color: "rgb(174 130 103)"}}>{totalPrice.toLocaleString("en-US")} VNĐ</span>
             </p>
-            
           </div>
         </div>
       </div>
-
-      {/* <div className=" d-flex align-items-center gap-5 cart__product-price">
-        <h5 className="cart__product-title" style={{marginTop: "15px", marginLeft: "10px"}}>{title}</h5>
-        <div>{price} VNĐ</div> 
-        <div className=" d-flex align-items-center justify-content-between" style={{ marginLeft: "35px", marginRight: "65px"}}>
-          <span className="quantity">{quantity}</span>
-        </div> 
-        <span>{totalPrice} VNĐ</span> 
-        </div>
-      </div> */}
     </ListGroupItem>
   );
 };
