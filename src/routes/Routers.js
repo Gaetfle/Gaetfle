@@ -23,7 +23,7 @@ const Routers = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/order" element={<Order />} />
+      <Route path="/listoforder" element={<Order />} />
     </Routes>
   );
 };

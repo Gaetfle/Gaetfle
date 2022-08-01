@@ -59,8 +59,6 @@ const FreeshipCard = (props) => {
                         </a>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
