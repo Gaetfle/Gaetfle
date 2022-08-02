@@ -135,7 +135,14 @@ const Checkout = () => {
                   <h4>Payment Method</h4>
                 </div>
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{ paddingTop: "25px", borderTop: "1px solid #fff" }}>
-                  {method} [{cardNumber}]
+                  {/* {method} */}
+                  {method !== "Thanh toán trực tiếp" ? (
+                    <>
+                      {method} [{cardNumber}]
+                    </>
+                  ) : (
+                    <>{method}</>
+                  )}
                   <span
                     style={{ color: "white", cursor: "pointer" }}
                     onClick={togglePayment}
@@ -196,7 +203,7 @@ const Checkout = () => {
                   }
                 </div>
                 <div className="order__button">
-                  <Link to="/order" onClick={addToOrder}>
+                  <Link to="/listoforder" onClick={addToOrder}>
                     <button >
                       Order
                     </button>
