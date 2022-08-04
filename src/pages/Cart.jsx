@@ -226,14 +226,14 @@ const Checkout = () => {
                 >
                   <DialogTitle>{"Notification"}</DialogTitle>
                   <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description" align='center'>
+                    <DialogContentText align='center'>
                       Do you want to confirm your order?
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={onCloseDialog}>Cancel</Button>
+                    <Button onClick={onCloseDialog} sx={{color: "#626546"}}>Cancel</Button>
                     <Link to="/listoforder">
-                      <Button onClick={addToOrder}>Confirm</Button>
+                      <Button onClick={addToOrder} sx={{color: "#626546"}}>Confirm</Button>
                     </Link>
                   </DialogActions>
                 </Dialog>
