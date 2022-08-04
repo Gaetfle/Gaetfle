@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
@@ -20,6 +20,13 @@ import { voucherUiActions } from "../store/voucher/voucherUiSlice";
 import ChoosedVoucherCard from "../components/UI/voucher/ChoosedVoucher";
 import { orderlistActions } from "../store/order/orderSlice";
 import Stepper from "../components/UI/stepper/Stepper";
+// import Dialog from "../components/UI/dialog/Dialog";
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 const Checkout = () => {
 
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -57,6 +64,7 @@ const Checkout = () => {
   const current = new Date();
   const id = "GH91"
   const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+  const [open, setOpen] = useState(false);
   const addToOrder = () => {
     console.log(id, "  ", date, "   ", totalPayment, "   ", method)
     dispatch(
@@ -67,6 +75,10 @@ const Checkout = () => {
         payment: method,
       })
     );
+  }
+
+  const onCloseDialog = () => {
+    setOpen(false);
   }
   return (
     <Helmet title="Order">
@@ -203,12 +215,28 @@ const Checkout = () => {
                   }
                 </div>
                 <div className="order__button">
-                  <Link to="/listoforder" onClick={addToOrder}>
-                    <button >
-                      Order
-                    </button>
-                  </Link>
+                  <button onClick={() =>{setOpen(true);}} >
+                    Order
+                  </button>
                 </div>
+                <Dialog
+                  open={open}
+                  onClose={onCloseDialog}
+                  aria-describedby="dialog-notification"
+                >
+                  <DialogTitle>{"Notification"}</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-slide-description" align='center'>
+                      Do you want to confirm your order?
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={onCloseDialog}>Cancel</Button>
+                    <Link to="/listoforder">
+                      <Button onClick={addToOrder}>Confirm</Button>
+                    </Link>
+                  </DialogActions>
+                </Dialog>
               </div>
             </Col>
           </Row>
