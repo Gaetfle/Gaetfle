@@ -102,6 +102,16 @@
   padding-top: 10px;
 }
 
+.dialog__container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.639);
+  z-index: 99999;
+}
+
 @media only screen and (max-width: 768px) {
   .checkout__bill h6 {
     font-size: 0.9rem;

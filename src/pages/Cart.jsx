@@ -219,24 +219,28 @@ const Checkout = () => {
                     Order
                   </button>
                 </div>
-                <Dialog
-                  open={open}
-                  onClose={onCloseDialog}
-                  aria-describedby="dialog-notification"
-                >
-                  <DialogTitle>{"Notification"}</DialogTitle>
-                  <DialogContent>
-                    <DialogContentText align='center'>
-                      Do you want to confirm your order?
-                    </DialogContentText>
-                  </DialogContent>
-                  <DialogActions>
-                    <Button onClick={onCloseDialog} sx={{color: "#626546"}}>Cancel</Button>
-                    <Link to="/listoforder">
-                      <Button onClick={addToOrder} sx={{color: "#626546"}}>Confirm</Button>
-                    </Link>
-                  </DialogActions>
-                </Dialog>
+                {/* <div className="dialog__container"> */}
+                  <Dialog
+                    open={open}
+                    onClose={onCloseDialog}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                    sx={{zIndex: "99999"}}
+                  >
+                    <DialogTitle id="alert-dialog-title">{"Notification"}</DialogTitle>
+                    <DialogContent>
+                      <DialogContentText id="alert-dialog-description" align='center'>
+                        Do you want to confirm your order?
+                      </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                      <Button onClick={onCloseDialog} sx={{color: "#626546"}}>Cancel</Button>
+                      <Link to="/listoforder">
+                        <Button onClick={addToOrder} sx={{color: "#626546"}}>Confirm</Button>
+                      </Link>
+                    </DialogActions>
+                  </Dialog>
+                {/* </div> */}
               </div>
             </Col>
           </Row>

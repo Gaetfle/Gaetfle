@@ -15,7 +15,7 @@ const VoucherInfo = () => {
     dispatch(voucherUiActions.toggle());
   };
 
-  const freeshipCard = freeship.slice(0, 2);
+  const freeshipCard = freeship.slice(0, 3);
   
   return (
     <div className="voucher__container">
