@@ -71,7 +71,7 @@ const Checkout = () => {
       orderlistActions.addItem({
         id,
         date,
-        total: totalPayment,
+        total: voucherPrice ? (totalPayment - voucherPrice) : totalPayment,
         payment: method,
       })
     );
