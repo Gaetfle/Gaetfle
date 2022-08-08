@@ -63,7 +63,7 @@ const PaymentInfo = () => {
           </div>
           <form>
             <label for="tttt">
-              <input type="radio" name="method" id="tttt" value="tt" onClick={ ()=>setVisible(false)}/>
+              <input type="radio" name="method" id="tttt" value="Thanh toán trực tiếp" onClick={ ()=>setVisible(false)} onChange={getMethod}/>
               <span>Thanh toán trực tiếp</span>
             </label>
             <label for="ccard">

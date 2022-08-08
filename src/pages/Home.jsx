@@ -5,7 +5,7 @@ import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 import donutImg from "../assets/images/donut.png";
-import TestimonialSlider from "../components/UI/slider/BannerSlider.jsx";
+import BannerSlider from "../components/UI/slider/BannerSlider.jsx";
 import Cookies from 'js-cookie';
 import BestProductSlider from "../components/UI/slider/BestProductSlider.jsx";
 import NewProductSlider from "../components/UI/slider/NewProductSlider.jsx";
@@ -54,7 +54,7 @@ const Home = () => {
             </Col>
 
             <Col lg="8" md="8">
-              <TestimonialSlider />
+              <BannerSlider />
             </Col>
           </Row>
         </Container>

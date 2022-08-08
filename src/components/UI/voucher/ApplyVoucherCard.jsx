@@ -43,7 +43,7 @@ const ApplyVoucherCard = (props) => {
                 <div>
                     <h3 className="mb-1 " style={{ fontSize: 16, fontWeight: "bold" }}>{props.title} </h3>
                     <p className=" mb-2 " style={{ fontSize: 14, }}>{props.desc}</p>
-                    <p className="text-muted   " style={{ fontSize: 12, }}>{props.date}</p>
+                    <p className="text-muted" style={{ fontSize: 12, }}>{props.date}</p>
                 </div>
 
             </div>

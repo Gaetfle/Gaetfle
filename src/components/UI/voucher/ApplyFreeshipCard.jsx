@@ -51,7 +51,7 @@ const ApplyFreeshipCard = (props) => {
             <div className="btn__wrapper">
                 <div className="info align-items-center ">
                     <div className="w-64 p-3 mt-2">
-                    <label className="btn__container">
+                    <label className="btnfs__container">
                         <input type="radio" name="radio" defaultValue={props.id} onClick={optionHandler}/>
                         <span className="checkmark"></span>
                     </label>

@@ -39,7 +39,8 @@
     margin-top: 10px;
 }
 
-.btn__container {
+.btnfs__container {
+    background-color:#b6d47600;
     display: block;
     position: relative;
     padding-left: 5px;
@@ -53,7 +54,7 @@
     user-select: none;
 }
 
-.btn__container input {
+.btnfs__container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -69,11 +70,11 @@
     border-radius: 50%;
 }
 
-.btn__container:hover input ~ .checkmark {
+.btnfs__container:hover input ~ .checkmark {
     background-color: #fff;
 }
 
-.btn__container input:checked ~ .checkmark {
+.btnfs__container input:checked ~ .checkmark {
     background-color: #86ae2ec2;
 }
 
@@ -83,11 +84,11 @@
     display: none;
 }
 
-.btn__container input:checked ~ .checkmark:after {
+.btnfs__container input:checked ~ .checkmark:after {
     display: block;
 }
   
-.btn__container .checkmark:after {
+.btnfs__container .checkmark:after {
     top: 9px;
     left: 9px;
     width: 8px;
