@@ -22,7 +22,6 @@ const Carts = () => {
             <i className="ri-close-fill"></i>
           </span>
           <h5>Cart</h5>
-
         </div>
 
         <div className="cart__item-list">

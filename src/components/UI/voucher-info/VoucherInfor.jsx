@@ -1,5 +1,4 @@
 import React from "react";
-import {AiFillCloseCircle} from 'react-icons/ai';
 import { voucherUiActions } from "../../../store/voucher/voucherUiSlice";
 import "../../../styles/voucher-info.css";
 import { useDispatch } from "react-redux";
@@ -20,10 +19,12 @@ const VoucherInfo = () => {
   
   return (
     <div className="voucher__container">
-      
       <ListGroup className="voucher">
-        <div className="voucher__close" style={{cursor: "pointer"}} onClick={toggleInfor}>
-          <AiFillCloseCircle/>   
+        <div className="voucher__close">
+          <span>
+            <i className="ri-close-fill" onClick={toggleInfor}></i>
+          </span>
+          <h5>Cart</h5>
         </div>
 
         <div className="voucher__item-list">

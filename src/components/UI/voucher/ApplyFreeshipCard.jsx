@@ -32,14 +32,14 @@ const ApplyFreeshipCard = (props) => {
     return (
 
         <div style={{ backgroundColor: "#b6d476c2" }} className="coupon rounded mb-3 d-flex justify-content-between">
-            <div className="kiri p-3 mt-2">
-                <div className="icon-container ">
-                    <div className="icon-container_box" >
+            <div className="image__wrapper p-3 mt-2">
+                <div className="image-container ">
+                    <div className="image-container_box" >
                         <img src={props.image} width="50" alt="voucher"/>
                     </div>
                 </div>
             </div>
-            <div className="tengah pt-2 d-flex w-100 justify-content-start mt-2">
+            <div className="content pt-2 d-flex w-100 justify-content-start mt-2">
                 <div>
                     <h3 className="mb-1 " style={{ fontSize: 16, fontWeight: "bold" }}>{props.title} </h3>
                     <p className=" mb-2 " style={{ fontSize: 14, }}>{props.desc}</p>
@@ -48,7 +48,7 @@ const ApplyFreeshipCard = (props) => {
 
             </div>
 
-            <div className="kanan ">
+            <div className="btn__wrapper">
                 <div className="info align-items-center ">
                     <div className="w-64 p-3 mt-2">
                     <label className="btn__container">
@@ -59,7 +59,7 @@ const ApplyFreeshipCard = (props) => {
                     <div className="w-64 mt-4">
                         <a 
                             target="_blank" 
-                            className="btn  btn-block" 
+                            className="btn btn-block" 
                             style={{
                                 display: "flex",
                                 alignItems: "flex-end",
