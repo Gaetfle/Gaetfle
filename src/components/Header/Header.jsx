@@ -120,7 +120,7 @@ const Header = () => {
                 </li>
               </ul>
             </span>
-            <span className="cart__icon" onClick={toggleCart}>
+            <span className="cart__icon" style={{cursor: "pointer"}} onClick={toggleCart}>
               <GrCart />
               <span className="cart__badge">{totalQuantity}</span>
             </span>
