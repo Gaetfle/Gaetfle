@@ -90,7 +90,7 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node,
 };
 
-const steps = ['Thêm sản phẩm vào giỏ hàng', 'Điền thông tin nhận hàng', 'Đặt hàng'];
+const steps = ['Add product to cart', 'Fill in delivery information', 'Order'];
 
 export default function CustomizedSteppers() {
   return (

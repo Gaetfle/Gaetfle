@@ -130,12 +130,12 @@ const Checkout = () => {
                   {gmail}
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3" style={{ color: "#999B84" }}>
-                  Mặc định
+                  Default
                   <span
                     style={{ color: "white", cursor: "pointer"}}
                     onClick={toggleInfor}
                   >
-                    Thay đổi
+                    Change
                   </span>
                   {showInfo && <ShippingInfo />}
                 </h6>
@@ -159,7 +159,7 @@ const Checkout = () => {
                     style={{ color: "white", cursor: "pointer" }}
                     onClick={togglePayment}
                   >
-                    Thay đổi
+                    Change
                   </span>
                   {showPayment && <PaymentInfo />}
                 </h6>

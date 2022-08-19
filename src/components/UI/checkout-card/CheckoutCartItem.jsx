@@ -9,7 +9,8 @@ const CheckoutCartItem = ({ item }) => {
       borderRadius: "20px",
       marginBottom: "30px",
       marginLeft: "30px",
-      height: "90px"
+      height: "90px",
+      backgroundColor: "rgb(255 237 226 / 60%)"
     }}>
       <div className="cart__item-info d-flex gap-2">
         <img src={image01} 

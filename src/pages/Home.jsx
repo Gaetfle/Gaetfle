@@ -61,21 +61,21 @@ const Home = () => {
       </section>
 
       <section>
-        <div style={{ marginBottom: "50px", padding: "50px" }}>
+        <div style={{ marginTop: "-50px", padding: "50px" }}>
           <div className="text-center">
               <h2>Best Seller Products</h2>
           </div>
             <BestProductSlider/>
         </div>
 
-        <div style={{ marginBottom: "50px", padding: "50px" }}>
+        <div style={{ padding: "50px" }}>
           <div className="text-center">
               <h2>Newest Products</h2>
           </div>
             <NewProductSlider/>
         </div>
 
-        <div style={{ marginBottom: "50px", padding: "50px" }}>
+        <div style={{ padding: "50px" }}>
           <div className="text-center">
               <h2>Gift for 8/3 - International Woman's Day</h2>
           </div>
@@ -84,7 +84,7 @@ const Home = () => {
       </section>
 
       <section>
-        <div className="testimonial ">
+        <div className="testimonial">
           <Container>
             <Row>
               <Col lg="6" md="6">
