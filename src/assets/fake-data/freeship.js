@@ -8,7 +8,7 @@ import voucher_05 from "../images/voucher/voucher5.png";
 const freeship = [
     {
         id: "01",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_01,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -16,7 +16,7 @@ const freeship = [
     },
     {
         id: "02",
-        title: "Freeship 20K",
+        title: "FS 20K",
         image: voucher_02,
         desc: "On order 200K or more",
         date: "20/07/2022",
@@ -25,7 +25,7 @@ const freeship = [
 
     {
         id: "03",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_04,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -33,7 +33,7 @@ const freeship = [
     },
     {
         id: "04",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_05,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -41,7 +41,7 @@ const freeship = [
     },
     {
         id: "05",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_01,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -49,7 +49,7 @@ const freeship = [
     },
     {
         id: "06",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_02,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -57,7 +57,7 @@ const freeship = [
     },
     {
         id: "07",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_03,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -65,7 +65,7 @@ const freeship = [
     },
     {
         id: "08",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_04,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -73,7 +73,7 @@ const freeship = [
     },
     {
         id: "09",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_05,
         desc: "On order 500K or more",
         date: "20/07/2022",
@@ -81,7 +81,7 @@ const freeship = [
     },
     {
         id: "10",
-        title: "Freeship 50K",
+        title: "FS 50K",
         image: voucher_01,
         desc: "On order 500K or more",
         date: "20/07/2022",

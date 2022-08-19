@@ -2,17 +2,17 @@ body {
     background: #FCF9F3;
 }
 
-.coupon{
+.coupon__container{
     margin-right: 40px;
 }
 
-.coupon .kanan {
+.coupon__container .btn__wrapper {
     border-left: 1px dashed #ddd;
     position: relative;
 }
 
-.coupon .kanan .info::after,
-.coupon .kanan .info::before {
+.coupon__container .btn__wrapper .info::after,
+.coupon__container .btn__wrapper .info::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -21,17 +21,17 @@ body {
     border-radius: 100%;
 }
 
-.coupon .kanan .info::before {
+.coupon__container .btn__wrapper .info::before {
     top: -10px;
     left: -10px;
 }
 
-.coupon .kanan .info::after {
+.coupon__container .btn__wrapper .info::after {
     bottom: -10px;
     left: -10px;
 }
 
-.coupon .time {
+.coupon__container .time {
     font-size: 1.6rem;
 }
 

@@ -31,7 +31,7 @@ const ApplyFreeshipCard = (props) => {
     }, [disableSave]);
     return (
 
-        <div style={{ backgroundColor: "#b6d476c2" }} className="coupon rounded mb-3 d-flex justify-content-between">
+        <div style={{ backgroundColor: "#b6d476c2" }} className="coupon__container rounded mb-3 d-flex justify-content-between">
             <div className="image__wrapper p-3 mt-2">
                 <div className="image-container ">
                     <div className="image-container_box" >

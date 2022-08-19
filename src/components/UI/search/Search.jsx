@@ -32,6 +32,7 @@ const Search = ({placeholder, data}) => {
     <div className="search">
       <div className="searchInputs">
         <input
+          style={{fontSize: "14px"}}
           type="text"
           placeholder={placeholder}
           value={searchTerm}

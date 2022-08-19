@@ -31,7 +31,7 @@ const ApplyVoucherCard = (props) => {
     }, [disableSave]);
     return (
 
-        <div style={{ backgroundColor: "#ebc7af" }} className="coupon rounded mb-3 d-flex justify-content-between">
+        <div style={{ backgroundColor: "#ebc7af" }} className="coupon__container rounded mb-3 d-flex justify-content-between">
             <div className="kiri p-3 mt-2">
                 <div className="icon-container ">
                     <div className="icon-container_box" >
@@ -48,7 +48,7 @@ const ApplyVoucherCard = (props) => {
 
             </div>
 
-            <div className="kanan ">
+            <div className="btn__wrapper ">
                 <div className="info align-items-center ">
                     <div className="w-64 p-3 mt-2">
                     <label className="btn__container">

@@ -85,7 +85,9 @@ const Header = () => {
             </div>
           </Link>
           {/* ======= search ======= */}
-          <Search placeholder="Search" data ={products}/>
+          <div style={{fontSize: "12px"}}>
+          <Search placeholder="Search by product's name" data ={products}/>
+          </div>
           
           {/* ======= menu ======= */}
 
